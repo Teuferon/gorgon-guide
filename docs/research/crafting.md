@@ -27,9 +27,9 @@ Bellema je v oblasti Gazluk s úrovní 70 až 80 ([wiki: Gazluk](https://wiki.pr
 
 ### XP a bonusy
 
-- XP za jednu výrobu je obvykle 4 krát level receptu. Beginner’s Arrowheads a Beginner’s Arrow dávají 0 ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)).
+- XP za jednu výrobu je obvykle 4 krát level receptu. Beginner's Arrowheads a Beginner's Arrow dávají 0 ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)).
 - Bonus za první výrobu je obvykle 16 krát level receptu. Level 1 dává 50, levely 2 a 3 dávají 100. U několika receptů nad 70 je na wiki otazník ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)).
-- Jedna výroba dá balík 1000 kusů ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching), [wiki: Beginner’s Arrow](https://wiki.projectgorgon.com/wiki/Beginners_Arrow)). Nesrovnalost. Stránka Oak Dowels říká, že recept dá 1 kus, a popis předmětu mluví o sbírce 1000 dowelů ([wiki: Oak Dowels](https://wiki.projectgorgon.com/wiki/Oak_Dowels)). TODO ověřit ve hře, jak velká je skutečná dávka.
+- Jedna výroba dá balík 1000 kusů ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching), [wiki: Beginner's Arrow](https://wiki.projectgorgon.com/wiki/Beginners_Arrow)). Nesrovnalost. Stránka Oak Dowels říká, že recept dá 1 kus, a popis předmětu mluví o sbírce 1000 dowelů ([wiki: Oak Dowels](https://wiki.projectgorgon.com/wiki/Oak_Dowels)). TODO ověřit ve hře, jak velká je skutečná dávka.
 - Potřebné XP k levelu (levely 1 až 50, z [wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)). Součty jsem spočítal sám, kumulativní XP k dosažení levelu je 10 na 1260, 20 na 6 760, 30 na 18 460, 40 na 39 760 a 50 na 78 010.
 - Součet bonusů za první výrobu všech receptů do levelu 50 vychází na zhruba 20 700 XP, tedy čtvrtina z 78 010. Do levelu 10 jsou bonusy za první výrobu 1 114 XP z potřebných 1 260. Výpočet vychází z pravidla „16 krát level“ a ze seznamu receptů na wiki, takže je to odhad. Některé recepty se učí u Elahila za peníze (stránka uvádí ceny 318 až 6 699 councils), takže ne každý bonus je zadarmo ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)). TODO zjistit, které recepty se učí od trenéra a které odemkne samotný level.
 
@@ -46,13 +46,13 @@ Hřídele šípů se suší v Drying Box (vyrábí se z Empty Fletching Box, dow
 
 Níže je trasa podle seznamu receptů na [wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching). Ceny jsou z obchodu Elahila ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)), pokud neuvedu jinak. Wiki neříká, zda ceny platí za kus nebo za balík, TODO ověřit ve hře.
 
-**Příprava (level 0).** Získat Comfortable favor u Elahila, odemknout Fletching za 500 councils. Úkol „Feathers For Elahil“ (Neutral) chce 3 Feathers a dá jednorázově 500 Beginner’s Arrow ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil), [wiki: Beginner’s Arrow](https://wiki.projectgorgon.com/wiki/Beginners_Arrow)). Potřebná je Handsaw pro těžbu dřeva, kterou prodává Therese za 75 councils ([wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)).
+**Příprava (level 0).** Získat Comfortable favor u Elahila, odemknout Fletching za 500 councils. Úkol „Feathers For Elahil“ (Neutral) chce 3 Feathers a dá jednorázově 500 Beginner's Arrow ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil), [wiki: Beginner's Arrow](https://wiki.projectgorgon.com/wiki/Beginners_Arrow)). Potřebná je Handsaw pro těžbu dřeva, kterou prodává Therese za 75 councils ([wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)).
 
 **Levely 1 až 9, Beginner tier.**
 
-- Beginner’s Arrowheads (level 1). Ingredience Flinty Rock, 20 councils u Elahila, Sie Antry, Mushroom Jack a dalších ([wiki: Flinty Rock](https://wiki.projectgorgon.com/wiki/Flinty_Rock)).
-- Beginner’s Arrow Shafts (level 2). Oak Dowels a Empty Fletching Box. Obojí prodává Elahil po 100 councils (Comfortable), nebo se vyrobí v Carpentry, dowel na levelu 3 a box na levelu 5 ([wiki: Empty Fletching Box](https://wiki.projectgorgon.com/wiki/Empty_Fletching_Box), [wiki: Oak Dowels](https://wiki.projectgorgon.com/wiki/Oak_Dowels)).
-- Beginner’s Arrow (3), Barbed (4), Long (6), Dense (7, potřebuje Antler), Reservoir (8, potřebuje Beakers), Snare (9, potřebuje Spiderweb). Všechny potřebují Feather. Elahilův hangout „Bow-hunting for stags“ dá Antler ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)).
+- Beginner's Arrowheads (level 1). Ingredience Flinty Rock, 20 councils u Elahila, Sie Antry, Mushroom Jack a dalších ([wiki: Flinty Rock](https://wiki.projectgorgon.com/wiki/Flinty_Rock)).
+- Beginner's Arrow Shafts (level 2). Oak Dowels a Empty Fletching Box. Obojí prodává Elahil po 100 councils (Comfortable), nebo se vyrobí v Carpentry, dowel na levelu 3 a box na levelu 5 ([wiki: Empty Fletching Box](https://wiki.projectgorgon.com/wiki/Empty_Fletching_Box), [wiki: Oak Dowels](https://wiki.projectgorgon.com/wiki/Oak_Dowels)).
+- Beginner's Arrow (3), Barbed (4), Long (6), Dense (7, potřebuje Antler), Reservoir (8, potřebuje Beakers), Snare (9, potřebuje Spiderweb). Všechny potřebují Feather. Elahilův hangout „Bow-hunting for stags“ dá Antler ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)).
 - Feathers padají z kuřat, divokých krocanů, pavouků, vlků a Deinonychusů ([wiki: Feather](https://wiki.projectgorgon.com/wiki/Feather)). Feathers lze také získat stahováním (Skinning) Chicken, Wild Chicken a Wild Turkey ([wiki: Feather](https://wiki.projectgorgon.com/wiki/Feather)). V Serbule padají od Chicken, Wild Turkey, Black Widow Spider, Venom Spider a Wolf.
 - Bonusy za první výrobu na tomto tieru dohromady 794 XP (50 + 100 + 100 + 64 + 96 + 112 + 128 + 144), podle pravidla 16 krát level. To je zhruba 63 % XP do levelu 10.
 
@@ -73,26 +73,26 @@ Níže je trasa podle seznamu receptů na [wiki: Fletching](https://wiki.project
 - Fletching 29 dá +1 Archery.
 - Advanced Arrow je první tier, který vyžadují Blitz Shot 4 (Archery 30) a Aimed Shot 3 (Archery 35) ([wiki: Advanced Arrow](https://wiki.projectgorgon.com/wiki/Advanced_Arrow)). Elahil je prodává od Comfortable.
 
-**Levely 30 až 49, Expert’s a Masterwork tier.** Tady je zásadní závislost na Alchemy. Skoro každý recept od levelu 30 potřebuje Weak, Potent nebo Ultimate Acidic Cleanser ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)). Weak Acidic Cleanser: Alchemy level 25, recept z 2 Bottle of Water, Rotten Strawberry a Giant Spider Leg dá 2 kusy, nebo z 3 Bottle of Water, Pyrite a Fuel Oil dá 3 kusy ([wiki: Weak Acidic Cleanser](https://wiki.projectgorgon.com/wiki/Weak_Acidic_Cleanser)). Recept na Potent Acidic Cleanser jsem nehledal. TODO.
+**Levely 30 až 49, Expert's a Masterwork tier.** Tady je zásadní závislost na Alchemy. Skoro každý recept od levelu 30 potřebuje Weak, Potent nebo Ultimate Acidic Cleanser ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)). Weak Acidic Cleanser: Alchemy level 25, recept z 2 Bottle of Water, Rotten Strawberry a Giant Spider Leg dá 2 kusy, nebo z 3 Bottle of Water, Pyrite a Fuel Oil dá 3 kusy ([wiki: Weak Acidic Cleanser](https://wiki.projectgorgon.com/wiki/Weak_Acidic_Cleanser)). Recept na Potent Acidic Cleanser jsem nehledal. TODO.
 
-- Expert’s Arrowheads (30). Flinty Rock, Small Dinosaur Scale, Weak Acidic Cleanser.
+- Expert's Arrowheads (30). Flinty Rock, Small Dinosaur Scale, Weak Acidic Cleanser.
 - Elegant Fletching (32). Feathers, Advanced Wood Glue (37 councils u Elahila při Friends), Weak Acidic Cleanser.
-- Expert’s Arrow Shafts, Mineral (30) potřebují Maple Dowels, Silver Ore a Weak Acidic Cleanser. Organic (31) Giant Spider Leg a Weak Acidic Cleanser.
-- Expert’s Arrow (33) a následující varianty. Fletching 43 dá +1 Archery.
+- Expert's Arrow Shafts, Mineral (30) potřebují Maple Dowels, Silver Ore a Weak Acidic Cleanser. Organic (31) Giant Spider Leg a Weak Acidic Cleanser.
+- Expert's Arrow (33) a následující varianty. Fletching 43 dá +1 Archery.
 - Masterwork Arrowheads (40) potřebují Fulgurite, Masterwork Arrow Shafts (40, 41) Cedar Dowels a Silver Ore nebo Cat Eyeball a Potent Acidic Cleanser. Cedar Dowels jsou v Carpentry na levelu 20, Elahil je prodává za 400 (Close Friends). Cat Eyeball dropuje mimo jiné Old Fangsworth ([wiki: Old Fangsworth](https://wiki.projectgorgon.com/wiki/Old_Fangsworth)).
-- Elahil prodává Expert’s Arrowheads za 800 (Friends) a Masterwork Arrowheads za 1 000 (Close Friends), takže hlavice lze koupit místo výroby.
+- Elahil prodává Expert's Arrowheads za 800 (Friends) a Masterwork Arrowheads za 1 000 (Close Friends), takže hlavice lze koupit místo výroby.
 
 **Levely 50 až 60.** Trenér Bellema v Gazluku, odemknutí 20 000 councils. Amazing Arrowheads u ní stojí 4 800 councils, ale Elahil je prodává za 1 200 (Best Friends), takže koupě od Elahila je levnější ([wiki: Bellema Deftwhisper](https://wiki.projectgorgon.com/wiki/Bellema_Deftwhisper), [wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)). Precision Fletching (50) potřebuje Expert Wood Glue (75 councils u Sie Antry, [wiki: Sie Antry](https://wiki.projectgorgon.com/wiki/Sie_Antry)).
 
 ### Nejlevnější cesta
 
-1. Do Archery kolem 40 šípy nevyrábět, kupovat u Elahila Beginner’s, Basic a Advanced. Nejvyšší tier, který kupuje, je Advanced.
-2. Fletching držet na Elahilově rozsahu a levelovat hlavně bonusy za první výrobu, jedna výroba od každého receptu. Surplus šípy lze prodat Elahilovi (ten nekupuje jen Beginner’s Arrow) nebo odevzdat ve Work Orders ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)).
-3. Jako cíl postačí Fletching 33 včas před Archery 42, kdy Blitz Shot 5 potřebuje Expert’s Arrow, protože ten NPC neprodávají ([wiki: Expert’s Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow)).
+1. Do Archery kolem 40 šípy nevyrábět, kupovat u Elahila Beginner's, Basic a Advanced. Nejvyšší tier, který kupuje, je Advanced.
+2. Fletching držet na Elahilově rozsahu a levelovat hlavně bonusy za první výrobu, jedna výroba od každého receptu. Surplus šípy lze prodat Elahilovi (ten nekupuje jen Beginner's Arrow) nebo odevzdat ve Work Orders ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)).
+3. Jako cíl postačí Fletching 33 včas před Archery 42, kdy Blitz Shot 5 potřebuje Expert's Arrow, protože ten NPC neprodávají ([wiki: Expert's Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow)).
 4. Materiály sbírat z dropů a hangoutů místo nákupu (Feathers, Spider Leg, Femur, Antler).
 5. Hlavice kupovat od Elahila a Sie Antry, pokud je to levnější než surovina (viz ceny výše).
 
-Work Orders na šípy podle wiki ([wiki: Basic Arrow](https://wiki.projectgorgon.com/wiki/Basic_Arrow), [wiki: Advanced Arrow](https://wiki.projectgorgon.com/wiki/Advanced_Arrow), [wiki: Expert’s Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow)). Fitz the Boatman bere 10 000 Basic Arrow za 1 484 councils (Industry 0). Thimble Pete bere 10 000 Advanced Arrow za 1 970 (Industry 10) a 10 000 Expert’s Arrow za 3 342 (Industry 20). Nesrovnalost. Stránka Basic Arrow uvádí cooldown 20 hodin, kdežto [wiki: Industry](https://wiki.projectgorgon.com/wiki/Industry) říká, že každá NPC zakázka jde splnit jednou za 30 dní. Pokud platí 30 dní, jde o jednorázovou odměnu a ne o stálý příjem.
+Work Orders na šípy podle wiki ([wiki: Basic Arrow](https://wiki.projectgorgon.com/wiki/Basic_Arrow), [wiki: Advanced Arrow](https://wiki.projectgorgon.com/wiki/Advanced_Arrow), [wiki: Expert's Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow)). Fitz the Boatman bere 10 000 Basic Arrow za 1 484 councils (Industry 0). Thimble Pete bere 10 000 Advanced Arrow za 1 970 (Industry 10) a 10 000 Expert's Arrow za 3 342 (Industry 20). Nesrovnalost. Stránka Basic Arrow uvádí cooldown 20 hodin, kdežto [wiki: Industry](https://wiki.projectgorgon.com/wiki/Industry) říká, že každá NPC zakázka jde splnit jednou za 30 dní. Pokud platí 30 dní, jde o jednorázovou odměnu a ne o stálý příjem.
 
 Staré fórum z roku 2018 (výtah z vyhledávače, nešlo otevřít) tvrdí, že Fletching je snadné levelovat jen se zásobou Feathers, což nováček nemá, a že vyžaduje mnoho materiálu z jiných řemesel. To souhlasí s wiki.
 
@@ -128,7 +128,7 @@ K čemu pro Archery. Dodává dřevo pro Carpentry, ovoce pro Cooking a semínka
 
 Trenéři. Jesina (Eltibule) pro 51 až 70, Drummond Stonecurl (východní Vidaria) pro 71 až 90. Nižší levely se získají prostým sbíráním ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
 
-Kde levelovat ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)). Levely 1 až 10 Oak Wood severozápadně od Serbule (potřeba Handsaw), 10 až 15 severozápad Serbule (hrozny, Oak Wood, Bluebell), 15 až 20 okolí Eltibule Keep (bavlna, Bluebell, Red Aster), 20 až 30 zahrady u Eltibule Keep (Maple Wood, bavlna), 30 až 40 poblíž Hogan’s Keep (pomeranče, guavy, fialky), od 40 Sun Vale, od 50 Ilmari Desert.
+Kde levelovat ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)). Levely 1 až 10 Oak Wood severozápadně od Serbule (potřeba Handsaw), 10 až 15 severozápad Serbule (hrozny, Oak Wood, Bluebell), 15 až 20 okolí Eltibule Keep (bavlna, Bluebell, Red Aster), 20 až 30 zahrady u Eltibule Keep (Maple Wood, bavlna), 30 až 40 poblíž Hogan's Keep (pomeranče, guavy, fialky), od 40 Sun Vale, od 50 Ilmari Desert.
 
 XP. Sběr dává od 1 XP (vejce) po 600 XP (Evu Fruit). Tabulka XP začíná 10 XP na level 1 a celkem je potřeba 522 860 XP do levelu 90 ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)). O bonusu za první výrobu wiki nepíše, což dává smysl, protože Foraging nemá recepty.
 

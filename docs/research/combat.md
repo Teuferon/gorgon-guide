@@ -57,9 +57,9 @@ Wiki poznamenává, že u několika záznamů od levelu 118 není uvedený zdroj
 
 Tři věci z wiki, které platí pro plánování.
 
-1. Každá schopnost vyžaduje minimální tier šípů. Podle wiki spotřebují Blitz Shot 1 až 2 a Aimed Shot 1 šípy „Beginner’s Arrow nebo lepší“, Aimed Shot 2 (level 18) a Blitz Shot 3 (level 21) potřebují Basic Arrow, Blitz Shot 4 (level 30), Aimed Shot 3 (level 35) a Multishot 3 (level 40) potřebují Advanced Arrow, Blitz Shot 5 (level 42) a Aimed Shot 4 (level 50) potřebují Expert’s Arrow a Blitz Shot 6 (level 51) potřebuje Masterwork Arrow ([Basic Arrow](https://wiki.projectgorgon.com/wiki/Basic_Arrow), [Advanced Arrow](https://wiki.projectgorgon.com/wiki/Advanced_Arrow), [Expert’s Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow), [Masterwork Arrow](https://wiki.projectgorgon.com/wiki/Masterwork_Arrow)).
-2. Šípy má v obchodě Elahil. Beginner’s Arrow za 3, Basic Arrow za 7 a Advanced Arrow za 15 councils (Comfortable), podle seznamu na [wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil). Wiki neříká, jestli jde o cenu za kus nebo za balík. TODO ověřit ve hře.
-3. Expert’s Arrow a Masterwork Arrow nemají na wiki žádného NPC prodejce ([Expert’s Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow), [Masterwork Arrow](https://wiki.projectgorgon.com/wiki/Masterwork_Arrow)). Od Archery kolem 42 tedy budete potřebovat vlastní Fletching nebo hráčský trh. Podrobnosti jsou v [crafting.md](crafting.md).
+1. Každá schopnost vyžaduje minimální tier šípů. Podle wiki spotřebují Blitz Shot 1 až 2 a Aimed Shot 1 šípy „Beginner's Arrow nebo lepší“, Aimed Shot 2 (level 18) a Blitz Shot 3 (level 21) potřebují Basic Arrow, Blitz Shot 4 (level 30), Aimed Shot 3 (level 35) a Multishot 3 (level 40) potřebují Advanced Arrow, Blitz Shot 5 (level 42) a Aimed Shot 4 (level 50) potřebují Expert's Arrow a Blitz Shot 6 (level 51) potřebuje Masterwork Arrow ([Basic Arrow](https://wiki.projectgorgon.com/wiki/Basic_Arrow), [Advanced Arrow](https://wiki.projectgorgon.com/wiki/Advanced_Arrow), [Expert's Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow), [Masterwork Arrow](https://wiki.projectgorgon.com/wiki/Masterwork_Arrow)).
+2. Šípy má v obchodě Elahil. Beginner's Arrow za 3, Basic Arrow za 7 a Advanced Arrow za 15 councils (Comfortable), podle seznamu na [wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil). Wiki neříká, jestli jde o cenu za kus nebo za balík. TODO ověřit ve hře.
+3. Expert's Arrow a Masterwork Arrow nemají na wiki žádného NPC prodejce ([Expert's Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow), [Masterwork Arrow](https://wiki.projectgorgon.com/wiki/Masterwork_Arrow)). Od Archery kolem 42 tedy budete potřebovat vlastní Fletching nebo hráčský trh. Podrobnosti jsou v [crafting.md](crafting.md).
 
 Wiki o Fletchingu doslova říká, že je „rather expensive and time consuming“, a proto je Archery méně lákavé než jiné bojové skilly ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)). Starší vlákno z oficiálního fóra z roku 2018 (jen výtah z vyhledávače, stránku jsem nemohl otevřít) tvrdí, že šípy do Advanced lze koupit od NPC, takže s Fletchingem není potřeba začínat brzy. S dnešní nabídkou Elahila to sedí.
 
@@ -71,7 +71,7 @@ Wiki neuvádí levely jednotlivých monster v zónách, jen úroveň oblasti ([S
 |---|---|---|---|---|
 | 1 až 10 | Anagoge Island | 1 až 10 | Startovní ostrov, krysy, kostlivci, vlci, pavouci | [wiki: Anagoge Island](https://wiki.projectgorgon.com/wiki/Anagoge_Island) |
 | 10 až 30 | Serbule, Serbule Hills | 1 až 30 | Prasata, jeleni, vlci, tygři, Goblin Archers. Goblin Archer ze Serbule Hills dává Advanced Arrow. Pozor na Serbule Hills Spider Cave. | [Serbule](https://wiki.projectgorgon.com/wiki/Serbule), [Serbule Hills](https://wiki.projectgorgon.com/wiki/Serbule_Hills), [Advanced Arrow](https://wiki.projectgorgon.com/wiki/Advanced_Arrow) |
-| 20 až 45 | Eltibule | 20 až 50 | Gnashers, Tor-Urak, Goblin Archers, Goblin Dungeon, Hogan’s Basement | [wiki: Eltibule](https://wiki.projectgorgon.com/wiki/Eltibule) |
+| 20 až 45 | Eltibule | 20 až 50 | Gnashers, Tor-Urak, Goblin Archers, Goblin Dungeon, Hogan's Basement | [wiki: Eltibule](https://wiki.projectgorgon.com/wiki/Eltibule) |
 | 30 až 50 | Sun Vale, Kur Mountains | 30 až 45 a 30 až 50 | Kur Mountains jsou zima, potřeba zdroje tepla. | [Sun Vale](https://wiki.projectgorgon.com/wiki/Sun_Vale), [Kur Mountains](https://wiki.projectgorgon.com/wiki/Kur_Mountains) |
 | 50 až 60 | Ilmari Desert (Amulna), Rahu | 50 až 60 a 51 až 60 | Ilmari prošlo v únoru 2026 přepracováním, takže seznam monster na wiki může být zastaralý. Potřeba voda kvůli „Dying of Thirst“. | [Ilmari](https://wiki.projectgorgon.com/wiki/Ilmari), [Rahu](https://wiki.projectgorgon.com/wiki/Rahu) |
 | 70 až 80 | Gazluk, Fae Realm | 70 až 80 | Gazluk má jedinou bezpečnou zónu, New Prestonbule Cave | [Gazluk](https://wiki.projectgorgon.com/wiki/Gazluk), [Fae Realm](https://wiki.projectgorgon.com/wiki/Fae_Realm) |
@@ -125,7 +125,7 @@ Nevýhody (tamtéž).
 
 - Skill se odemyká u Gisliho v Serbule Keep za 2 000 councils bez požadavku na favor ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling), [wiki: Gisli](https://wiki.projectgorgon.com/wiki/Gisli)).
 - XP do skillu získáváte aktivním používáním pet schopností v boji ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)).
-- Tame Rat vyžaduje sýr ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)). Sýr roste na startovním ostrově Anagoge ([wiki: Anagoge Island](https://wiki.projectgorgon.com/wiki/Anagoge_Island)). Tame Big Cat vyžaduje provázek (level 20), Tame Bear bidlo (level 40), Tame Bee kytici Bee-Lover’s Bouquet (level 70).
+- Tame Rat vyžaduje sýr ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)). Sýr roste na startovním ostrově Anagoge ([wiki: Anagoge Island](https://wiki.projectgorgon.com/wiki/Anagoge_Island)). Tame Big Cat vyžaduje provázek (level 20), Tame Bear bidlo (level 40), Tame Bee kytici Bee-Lover's Bouquet (level 70).
 - Pet se levelí zvlášť. Až má dost XP, musíte za poplatek navštívit trenéra ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)).
 - Sloty ve stájích 1 až 3 jsou zdarma, slot 4 stojí 100 a slot 14 stojí 10 000 000 councils ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)). Sloty sdílíte s mounty, takže mount ve slotu 1 může blokovat prvního peta.
 
@@ -139,13 +139,13 @@ Nesrovnalost. Codex píše, že skill se poprvé učí u Crelpina ve Fae Realm a
 
 ### Milníky
 
-Z tabulky na [wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling). Level 1 Tame Rat, level 3 Sic ’Em, level 4 Feed Pet, level 5 That’ll Do, level 6 Get It Off Me (taunt a obranný režim), level 7 Monstrous Rage, level 8 Shrill Command (core útok s dosahem 30 m, nepotřebuje peta), level 10 Clever Trick, level 15 Unnatural Wrath (potřebuje Anchor Rune, pet si ubližuje), level 20 Tame Big Cat, level 30 Mark Weakness (signature debuff), level 40 Tame Bear, level 70 Tame Bee.
+Z tabulky na [wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling). Level 1 Tame Rat, level 3 Sic 'Em, level 4 Feed Pet, level 5 That'll Do, level 6 Get It Off Me (taunt a obranný režim), level 7 Monstrous Rage, level 8 Shrill Command (core útok s dosahem 30 m, nepotřebuje peta), level 10 Clever Trick, level 15 Unnatural Wrath (potřebuje Anchor Rune, pet si ubližuje), level 20 Tame Big Cat, level 30 Mark Weakness (signature debuff), level 40 Tame Bear, level 70 Tame Bee.
 
 Poznámka k wiki. U Bees stránka uvádí v textu level 70, ale tabulka obsahuje Freeze Wasp už na 35 a ochočitelné včely do levelu 100 ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)). Neověřeno.
 
 ### Moby a zóny
 
-Stejné jako pro Archery, protože pet bojuje s vámi. Zajímavý cíl pro Tame Big Cat je Old Fangsworth, pojmenovaný tygr v Serbule, tame level 20, 635 zdraví, slabý na Fire, Poison a Trauma, respawn 3 minuty ([wiki: Old Fangsworth](https://wiki.projectgorgon.com/wiki/Old_Fangsworth)). Dropuje mimo jiné Beginner’s Arrow, Cat Eyeball a Crude Animal Skin.
+Stejné jako pro Archery, protože pet bojuje s vámi. Zajímavý cíl pro Tame Big Cat je Old Fangsworth, pojmenovaný tygr v Serbule, tame level 20, 635 zdraví, slabý na Fire, Poison a Trauma, respawn 3 minuty ([wiki: Old Fangsworth](https://wiki.projectgorgon.com/wiki/Old_Fangsworth)). Dropuje mimo jiné Beginner's Arrow, Cat Eyeball a Crude Animal Skin.
 
 ## 3. Archery a Mentalism
 

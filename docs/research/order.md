@@ -34,7 +34,7 @@ graph TD
 | Carpentry -> Fletching | Dowely a Empty Fletching Box | [wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching), [wiki: Carpentry](https://wiki.projectgorgon.com/wiki/Carpentry) |
 | Alchemy -> Fletching | Acidic Cleansery od Fletchingu 30. Weak Acidic Cleanser se vyrábí na Alchemy 25 | [wiki: Weak Acidic Cleanser](https://wiki.projectgorgon.com/wiki/Weak_Acidic_Cleanser) |
 | Butchering, Skinning -> Fletching | Femur (Advanced Arrowheads), Feathers z kuřat a krocanů při stahování, Cat Eyeball | [wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching), [wiki: Feather](https://wiki.projectgorgon.com/wiki/Feather), [wiki: Butchering](https://wiki.projectgorgon.com/wiki/Butchering) |
-| Fletching -> Archery | Šípy. Od Archery 42 jsou potřeba Expert’s Arrow, které NPC neprodávají | [wiki: Expert’s Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow) |
+| Fletching -> Archery | Šípy. Od Archery 42 jsou potřeba Expert's Arrow, které NPC neprodávají | [wiki: Expert's Arrow](https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow) |
 | Gardening, Butchering, Foraging -> Cooking | Zelenina, maso, ovoce | [wiki: Cooking](https://wiki.projectgorgon.com/wiki/Cooking) |
 | Skinning -> Tanning -> Leatherworking | Kůže, rolls, výrobky | [wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning) |
 | Jakýkoli bojový skill 50 -> Druid | Podmínka pro oltář | [wiki: Druid](https://wiki.projectgorgon.com/wiki/Druid) |
@@ -65,12 +65,12 @@ Uživatel má Archery kolem 20 a Animal Handling kolem 15. Pořadí je moje sest
 2. Zvyšovat favor u Elahila na Comfortable a Friends. Důvody. Odemknutí Fletchingu (Comfortable, 500 councils), levnější dowely a boxy, šípy Advanced a hodinové hangouty s Archery XP ([wiki: Elahil](https://wiki.projectgorgon.com/wiki/Elahil)).
 3. Vedle boje přidat Skinning a Butchering. Oba se levelují přímo na mrtvolách, které stejně zabíjíte, a dávají Feathers, Femur a maso. Nůž k Butcheringu prodává Fainor, cenu jsem nezjistil ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning), [wiki: Butchering](https://wiki.projectgorgon.com/wiki/Butchering)). Skinning 15 dá +1 Animal Handling.
 4. First Aid od Marny zdarma. Marnin hangout dá 200 First Aid XP ([wiki: Marna](https://wiki.projectgorgon.com/wiki/Marna)). Armor Patching učí Marna také zdarma ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
-5. Nakupovat šípy u Elahila místo výroby. Cena je malá (Beginner’s 3, Basic 7, Advanced 15, ověřit jednotku, viz [crafting.md](crafting.md)).
+5. Nakupovat šípy u Elahila místo výroby. Cena je malá (Beginner's 3, Basic 7, Advanced 15, ověřit jednotku, viz [crafting.md](crafting.md)).
 
 ### Fáze B. Fletching a Carpentry (Archery 30 až 45)
 
 1. Carpentry. Dowely a boxy si můžete vyrábět sami z Oak Wood (Handsaw 75 councils u Therese, [wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)). Carpentry 10 (Maple Dowels), 20 (Cedar Dowels), 30 (Spruce Dowels).
-2. Fletching. Udělat jednou každý recept pro bonus za první výrobu (zhruba 20 700 XP do levelu 50, odhad, viz [crafting.md](crafting.md)). Cíl je Fletching 33 před Archery 42 (Expert’s Arrow).
+2. Fletching. Udělat jednou každý recept pro bonus za první výrobu (zhruba 20 700 XP do levelu 50, odhad, viz [crafting.md](crafting.md)). Cíl je Fletching 33 před Archery 42 (Expert's Arrow).
 3. Alchemy 25 kvůli Weak Acidic Cleanseru. Od Fletchingu 30 bez Alchemy nejde skoro nic vyrobit ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)). Alchemy učí například Azalak v Serbule ([wiki: Azalak](https://wiki.projectgorgon.com/wiki/Azalak)).
 4. Cooking a Gardening jako vedlejší. Jídlo dává regeneraci, zeleninu dodává Gardening. Gardening má semínka od 7 councils u Therese ([wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)).
 
