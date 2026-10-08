@@ -125,7 +125,7 @@ Nevýhody (tamtéž).
 
 - Skill se odemyká u Gisliho v Serbule Keep za 2 000 councils bez požadavku na favor ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling), [wiki: Gisli](https://wiki.projectgorgon.com/wiki/Gisli)).
 - XP do skillu získáváte aktivním používáním pet schopností v boji ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)).
-- Tame Rat vyžaduje sýr ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)). Sýr roste na startovním ostrově Anagoge ([wiki: Anagoge Island](https://wiki.projectgorgon.com/wiki/Anagoge_Island)). Tame Big Cat vyžaduje provázek (level 20), Tame Bear bidlo (level 40), Tame Bee kytici Bee-Lover's Bouquet (level 70).
+- Tame Rat vyžaduje sýr ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)). Sýr roste na startovním ostrově Anagoge ([wiki: Anagoge Island](https://wiki.projectgorgon.com/wiki/Anagoge_Island)). Tame Big Cat vyžaduje String nebo Cat Eyeball (level 20, Cat Shrine v Eltibule), Tame Bear Perch (level 40, Bear Shrine v Kur Mountains), Tame Bee kytici Bee-Lover's Bouquet (level 70).
 - Pet se levelí zvlášť. Až má dost XP, musíte za poplatek navštívit trenéra ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)).
 - Sloty ve stájích 1 až 3 jsou zdarma, slot 4 stojí 100 a slot 14 stojí 10 000 000 councils ([wiki: Animal Handling](https://wiki.projectgorgon.com/wiki/Animal_Handling)). Sloty sdílíte s mounty, takže mount ve slotu 1 může blokovat prvního peta.
 
@@ -210,7 +210,7 @@ Silvia (Druid Camp, Sun Vale) učí základní schopnosti a Toxinball 1 až 6 (n
 |---|---|---|---|
 | Přežití při sólu | Pet tankuje (Codex) | Jen vlastní léčení a buffy | Léčení a Deer Form |
 | Start | 2 000 councils u Gisliho, nepřetržitá práce s petem | 0 councils, ale nejdřív favor u Echura | Až po 50 v jiném skillu, permanentní |
-| Vedlejší náklady | Sýr, provázek, bidlo, stáje, level peta | Žádné spotřební | Dřevěný předmět, Silvia platí po tierech |
+| Vedlejší náklady | Sýr, String, Perch, stáje, level peta | Žádné spotřební | Dřevěný předmět, Silvia platí po tierech |
 | Zdi na 51 až 70 | 20 000 a 100 000 councils | 20 000 a 100 000 councils (nepotvrzeno) | Neznámé, TODO |
 | Doporučení komunity | Codex ano, FAQ jen s pet | FAQ neutrální | FAQ neutrální |
 

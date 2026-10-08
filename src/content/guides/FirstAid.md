@@ -1,26 +1,26 @@
-First Aid léčí vás i ostatní pomocí First Aid Kitů. Archery má vlastní léčení v podobě Restorative Arrow, takže First Aid je doplněk, ne nutnost ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid), [wiki: Archery](https://wiki.projectgorgon.com/wiki/Archery)).
+First Aid heals you and others with First Aid Kits. Archery has its own healing in the form of Restorative Arrow, so First Aid is an add-on, not a requirement ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid), [wiki: Archery](https://wiki.projectgorgon.com/wiki/Archery)).
 
-## Kde začít
+## Where to start
 
-- Marna v Serbule učí základ rozhovorem zdarma ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid), [wiki: Marna](https://wiki.projectgorgon.com/wiki/Marna)).
-- Hangout „Fill out first aid kits“ trvá 2 hodiny a dá 200 First Aid XP ([wiki: Marna](https://wiki.projectgorgon.com/wiki/Marna)).
-- Yagreet v Sun Vale učí First Aid 6 ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
-- Mox Warcut v New Prestonbule Cave učí levely 51 až 70. Backfat ve Fae Realm učí 71 až 80. Serendipity Cheddar a Sir Hughes učí 81 a výš ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- Marna in Serbule teaches the basics for free in conversation ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid), [wiki: Marna](https://wiki.projectgorgon.com/wiki/Marna)).
+- The hangout "Fill out first aid kits" takes 2 hours and gives 200 First Aid XP ([wiki: Marna](https://wiki.projectgorgon.com/wiki/Marna)).
+- Yagreet in Sun Vale teaches First Aid 6 ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- Mox Warcut in New Prestonbule Cave teaches levels 51 to 70. Backfat in the Fae Realm teaches levels 71 to 80. Serendipity Cheddar and Sir Hughes teach levels 81 and up ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
 
-## Postup podle levelů
+## Leveling path
 
-- Kity nakoupíte u NPC, nebo je vyrobíte v Toolcrafting ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
-- Každé použití kitu spotřebuje kit s 10% pravděpodobností. U First Aid 7, 9 a 10 je pravděpodobnost 25 % ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
-- Kill dává XP skillům, jejichž schopnost jste použili v poslední minutě. U First Aid to přímo wiki nepíše, ale u Armor Patching ano, a jde o stejný mechanismus ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
-- Starší Steam průvodce radí dát First Aid na sidebar a používat ho každou minutu během boje. Zdroj je starý a v research bez odkazu.
+- You buy kits from NPCs, or you make them with Toolcrafting ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- Each use of a kit consumes the kit with a 10% chance. At First Aid 7, 9 and 10, the chance is 25% ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- A kill gives XP to skills whose ability you used in the last minute. The wiki does not say this directly for First Aid, but it does for Armor Patching, and it is the same mechanic ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
+- An older Steam guide advises putting First Aid on your sidebar and using it every minute during combat. The source is old, and the research does not include a link to it.
 
-## Závislosti
+## Dependencies
 
-- Toolcrafting vyrábí First Aid Kity ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
-- First Aid má synergie s Anatomy na levelech 35, 65 a 95, s Druid na levelu 29 a se Survival Instincts na levelu 35 ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
-- Battle Chemistry vyžaduje First Aid pro Healing Mist ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- Toolcrafting makes First Aid Kits ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- First Aid has synergies with Anatomy at levels 35, 65 and 95, with Druid at level 29, and with Survival Instincts at level 35 ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- Battle Chemistry requires First Aid for Healing Mist ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
 
-## Nejasnosti
+## Open questions
 
-- Wiki neuvádí recepty na obvazy ani na základní kity. TODO ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
-- Tip o sidebaru a boji pochází ze starého Steam průvodce bez odkazu. Nepotvrzeno.
+- The wiki does not list recipes for bandages or basic kits. TODO ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- The tip about the sidebar and combat comes from an old Steam guide with no link. Not confirmed.

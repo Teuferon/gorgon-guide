@@ -1,22 +1,22 @@
-Armor Patching učí Marna zdarma. Pro Archery postavu, která není zvíře, je náhradou za Survival Instincts ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching), [wiki: Survival Instincts](https://wiki.projectgorgon.com/wiki/Survival_Instincts)).
+Marna teaches Armor Patching for free. For an Archery character that is not an animal, it is the replacement for Survival Instincts ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching), [wiki: Survival Instincts](https://wiki.projectgorgon.com/wiki/Survival_Instincts)).
 
-## Kde začít
+## Where to start
 
-- Marna v obchodě u studny v Serbule Keep učí Armor Patching zdarma ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching), [wiki: Marna](https://wiki.projectgorgon.com/wiki/Marna)).
+- Marna, in the shop by the well in Serbule Keep, teaches Armor Patching for free ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching), [wiki: Marna](https://wiki.projectgorgon.com/wiki/Marna)).
 
-## Postup podle levelů
+## Leveling path
 
-- Kill dá XP skillům, jejichž schopnost jste použili v poslední minutě. Wiki to píše přímo u Armor Patching ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
+- A kill gives XP to skills whose ability you used in the last minute. The wiki states this directly for Armor Patching ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
 
-## Nejlevnější cesta
+## Cheapest route
 
-- Armor Patching se učí zdarma u Marny ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
+- Marna teaches Armor Patching for free ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
 
-## Závislosti
+## Dependencies
 
-- Survival Instincts je podle wiki skill jen pro zvířecí postavy. Pokud postava není zvíře, Armor Patching je náhrada ([wiki: Survival Instincts](https://wiki.projectgorgon.com/wiki/Survival_Instincts)).
-- First Aid se učí u Marny zdarma také a má stejný XP mechanismus z killu ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
+- According to the wiki, Survival Instincts is a skill only for animal characters. If your character is not an animal, Armor Patching is the replacement ([wiki: Survival Instincts](https://wiki.projectgorgon.com/wiki/Survival_Instincts)).
+- Marna also teaches First Aid for free, and First Aid has the same kill-XP mechanic ([wiki: First Aid](https://wiki.projectgorgon.com/wiki/First_Aid)).
 
-## Nejasnosti
+## Open questions
 
-- Research nepopisuje, co Armor Patching dělá. Neuvádí ani recepty, tabulku XP nebo ceny. TODO ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).
+- The research does not describe what Armor Patching does. It also gives no recipes, XP table or prices. TODO ([wiki: Armor Patching](https://wiki.projectgorgon.com/wiki/Armor_Patching)).

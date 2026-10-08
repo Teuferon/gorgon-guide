@@ -1,33 +1,33 @@
-Skinning dodává kůže pro Tanning a Feathers z kuřat a krocanů pro Fletching. Dává také +1 Animal Handling na levelu 15 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning), [wiki: Feather](https://wiki.projectgorgon.com/wiki/Feather)).
+Skinning gives hides for Tanning and Feathers from chickens and turkeys for Fletching. It also gives +1 Animal Handling at level 15 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning), [wiki: Feather](https://wiki.projectgorgon.com/wiki/Feather)).
 
-## Kde začít
+## Where to start
 
-- Začátečník dostane Simple Skinning Knife od Ivyna. Nebo si koupí nůž od Kleavea v Eltibule ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
-- Nůž musíte mít v inventáři, jinak se možnost stažení u mrtvoly neobjeví ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
-- Jednu mrtvolu lze stáhnout, nebo rozporcovat Butcheringem, ne obojí ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning), [wiki: Butchering](https://wiki.projectgorgon.com/wiki/Butchering)).
-- Nishika a Rugen v Rahu učí levely 51 až 70. Felmer v Fel-Dasculan Ruins učí 71 až 80. Dunahain Broadarm a Grim Jim učí 81 až 90 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+- A beginner gets a Simple Skinning Knife from Ivyn. Or you can buy a knife from Kleave in Eltibule ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+- The knife must be in your inventory, or the skinning option does not appear on a corpse ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+- You can either skin a corpse or butcher it, not both ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning), [wiki: Butchering](https://wiki.projectgorgon.com/wiki/Butchering)).
+- Nishika and Rugen in Rahu teach levels 51 to 70. Felmer in the Fel-Dasculan Ruins teaches levels 71 to 80. Dunahain Broadarm and Grim Jim teach levels 81 to 90 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
 
-## Postup podle levelů
+## Leveling path
 
-- Úspěšný Skinning dá XP rovné levelu nepřítele zaokrouhlenému nahoru na násobek 5. Každý další předmět přidá 5 XP ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
-- Kde stahovat podle kůže. Wiki sama má u vyšších tierů otazníky ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
-  - Shoddy od levelu 0. Prasata a vlci u Serbule, krysy v Serbule Sewers a jeleni jižně od Serbule.
-  - Rough od levelu 11. Divoká prasata severně od Serbule u portálu do Eltibule.
-  - Crude od levelu 16. Eltibule. Tor-Urak dává +40 XP.
-  - Decent od levelu 26. Severovýchodní Eltibule.
-  - Nice od levelu 40, přesná hranice je nejistá. Kur Mountains.
+- A successful Skinning gives XP equal to the enemy's level, rounded up to the next multiple of 5. Each extra item adds 5 XP ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+- Where to skin each hide type. The wiki itself has question marks for the higher tiers ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+  - Shoddy from level 0. Pigs and wolves near Serbule, rats in Serbule Sewers, and deer south of Serbule.
+  - Rough from level 11. Wild pigs north of Serbule at the portal to Eltibule.
+  - Crude from level 16. Eltibule. Tor-Urak gives +40 XP.
+  - Decent from level 26. Northeast Eltibule.
+  - Nice from level 40. The exact threshold is uncertain. Kur Mountains.
 
-## Závislosti
+## Dependencies
 
-- Tanning dostává kůže. Tanning dává +1 Skinning na levelu 20 ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Leatherworking dostává kůže a výrobky přes Tanning ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Butchering zpracovává stejnou mrtvolu jiným způsobem. Jen jeden z nich je možný ([wiki: Butchering](https://wiki.projectgorgon.com/wiki/Butchering)).
-- Synergie: Butchering na levelech 10, 30 a 50, Leatherworking na 15, Tanning na 20 a Textile Creation na 20 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
-- Odměny: +1 Tanning na levelech 10, 30 a 50, +1 Animal Handling na levelu 15 a +1 Cooking na levelu 60 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
-- Feathers padají z Chicken, Wild Chicken a Wild Turkey, a to i při stahování ([wiki: Feather](https://wiki.projectgorgon.com/wiki/Feather)).
+- Tanning gets hides. Tanning gives +1 Skinning at level 20 ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Leatherworking gets hides and products through Tanning ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Butchering processes the same corpse in another way. Only one of them is possible ([wiki: Butchering](https://wiki.projectgorgon.com/wiki/Butchering)).
+- Skinning has synergies with Butchering at levels 10, 30 and 50, with Leatherworking at 15, with Tanning at 20 and with Textile Creation at 20 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+- Skinning gives +1 Tanning at levels 10, 30 and 50, +1 Animal Handling at level 15 and +1 Cooking at level 60 ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+- Feathers drop from Chicken, Wild Chicken and Wild Turkey, including when you skin them ([wiki: Feather](https://wiki.projectgorgon.com/wiki/Feather)).
 
-## Nejasnosti
+## Open questions
 
-- Wiki u vyšších tierů kůže má otazníky, například u Nice tieru ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
-- Research nezmiňuje trenéra ani cenu pro levely 1 až 50. TODO.
-- Research nezjistil, kde Ivyn stojí. TODO.
+- The wiki has question marks for the higher hide tiers, such as Nice ([wiki: Skinning](https://wiki.projectgorgon.com/wiki/Skinning)).
+- The research does not mention a trainer or a price for levels 1 to 50. TODO.
+- The research did not find where Ivyn is. TODO.

@@ -1,30 +1,30 @@
-Foraging dodává dřevo pro Carpentry, a Carpentry vyrábí dowely a boxy, bez kterých Fletching nejde. Foraging dává také ovoce pro Cooking a semínka pro Gardening ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+Foraging gives wood for Carpentry, and Carpentry makes dowels and boxes, which Fletching cannot work without. Foraging also gives fruit for Cooking and seeds for Gardening ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
 
-## Kde začít
+## Where to start
 
-- Levely 1 až 10 sbírejte Oak Wood severozápadně od Serbule. Potřebujete Handsaw, který prodává Therese za 75 councils ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging), [wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)).
-- Jesina v Eltibule učí levely 51 až 70. Drummond Stonecurl ve východní Vidarii učí 71 až 90 ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Nižší levely získáte prostým sbíráním ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- At levels 1 to 10, gather Oak Wood northwest of Serbule. You need a Handsaw, which Therese sells for 75 councils ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging), [wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)).
+- Jesina in Eltibule teaches levels 51 to 70. Drummond Stonecurl in eastern Vidaria teaches levels 71 to 90 ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- You gain the lower levels simply by gathering ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
 
-## Postup podle levelů
+## Leveling path
 
-- Levely 1 až 10. Oak Wood severozápadně od Serbule, potřeba Handsaw ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Levely 10 až 15. Severozápad Serbule, hrozny, Oak Wood a Bluebell ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Levely 15 až 20. Okolí Eltibule Keep, bavlna, Bluebell a Red Aster ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Levely 20 až 30. Zahrady u Eltibule Keep, Maple Wood a bavlna ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Levely 30 až 40. Poblíž Hogan's Keep, pomeranče, guavy a fialky ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Od levelu 40 Sun Vale, od levelu 50 Ilmari Desert ([wiki: Sun Vale](https://wiki.projectgorgon.com/wiki/Sun_Vale), [wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Sběr dává od 1 XP za vejce po 600 XP za Evu Fruit. Tabulka začíná na 10 XP na levelu 1 a do levelu 90 je potřeba celkem 522 860 XP ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Seek Objective na levelu 5 a Objective Orienteering na levelu 15 hledají cíle úkolů ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Foraging nemá recepty, takže bonus za první výrobu nemá ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Levels 1 to 10. Oak Wood northwest of Serbule. You need a Handsaw ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Levels 10 to 15. Northwest of Serbule, grapes, Oak Wood and Bluebell ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Levels 15 to 20. The area around Eltibule Keep, with cotton, Bluebell and Red Aster ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Levels 20 to 30. The gardens near Eltibule Keep, with Maple Wood and cotton ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Levels 30 to 40. Near Hogan's Keep, with oranges, guavas and violets ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- From level 40, Sun Vale. From level 50, the Ilmari Desert ([wiki: Sun Vale](https://wiki.projectgorgon.com/wiki/Sun_Vale), [wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Gathering gives from 1 XP for an egg up to 600 XP for an Eva Fruit. The table starts at 10 XP at level 1. Reaching level 90 takes 522,860 XP in total ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Seek Objective at level 5 and Objective Orienteering at level 15 find quest targets ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Foraging has no recipes, so it has no first-craft bonus ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
 
-## Závislosti
+## Dependencies
 
-- Carpentry dostává dřevo od Foraging a Foraging má se Carpentry synergii na levelu 20 ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)). Fletching potřebuje Carpentry, takže řetěz je Foraging, Carpentry, Fletching ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)).
-- Foraging má synergie s Cooking na 40, s Gardening na 20 a 50 a s Druid na 22 ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Foraging dává Mycology bonusové levely a synergie na 30 a 55 ([wiki: Mycology](https://wiki.projectgorgon.com/wiki/Mycology)).
+- Carpentry gets wood from Foraging, and Foraging has a synergy with Carpentry at level 20 ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)). Fletching needs Carpentry, so the chain is Foraging, Carpentry, Fletching ([wiki: Fletching](https://wiki.projectgorgon.com/wiki/Fletching)).
+- Foraging has synergies with Cooking at 40, with Gardening at 20 and 50, and with Druid at 22 ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- Foraging gives Mycology bonus levels and synergies at 30 and 55 ([wiki: Mycology](https://wiki.projectgorgon.com/wiki/Mycology)).
 
-## Nejasnosti
+## Open questions
 
-- Jak se Foraging odemyká a kolik to stojí, research nezjistil. TODO ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
-- Research přečetl jen první část wiki stránky Foraging, seznam lokací je proto neúplný ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- The research did not find how Foraging is unlocked or what it costs. TODO ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).
+- The research read only the first part of the Foraging wiki page, so the list of locations is incomplete ([wiki: Foraging](https://wiki.projectgorgon.com/wiki/Foraging)).

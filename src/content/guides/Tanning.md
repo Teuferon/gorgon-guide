@@ -1,31 +1,31 @@
-Tanning mění kůže na Rolls a barví kožené brnění. Pro Archery postavu je to vedlejší skill, užitečný hlavně kvůli kožené zbroji. Přímou vazbu na Archery research nenašel, protože wiki se o tětivách ani toulcích nezmiňuje ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+Tanning turns hides into Rolls and dyes leather armor. For an Archery character, it is a secondary skill, useful mainly for leather armor. The research found no direct link to Archery, because the wiki does not mention bowstrings or quivers ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
 
-## Kde začít
+## Where to start
 
-- Kleave v Eltibule učí skill. Vyžaduje úkol „Power Potions!“ a alespoň Comfortable favor ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Sirine v Rahu odemyká levely 51 až 70. Felmer ve Fae Realm učí 71 až 80. Dunahain Broadarm učí 81 až 90. Grim Jim ve Statehelmu učí 91 až 100 ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Kleave in Eltibule teaches the skill. It requires the quest "Power Potions!" and at least Comfortable favor ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Sirine in Rahu unlocks levels 51 to 70. Felmer in the Fae Realm teaches levels 71 to 80. Dunahain Broadarm teaches levels 81 to 90. Grim Jim in Statehelm teaches levels 91 to 100 ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
 
-## Postup podle levelů
+## Leveling path
 
-- Level 1. Shoddy Leather Roll dá 40 XP za první výrobu a 10 XP běžně. Leather Strips ve čtyřech variantách dají 100 XP a 10 XP ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Level 5. Dye Leather Armor s jednou barvou dá 80 XP za první výrobu a 20 XP běžně ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Level 8. Rough Leather Roll dá 128 a 32 XP ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Level 18. Crude Leather Roll dá 288 a 72 XP ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Level 20. Rawhide Sheet dá 320 a 80 XP ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Level 25. Dye Leather Armor se dvěma barvami dá 400 a 100 XP ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Level 28. Decent Leather Roll dá 448 a 112 XP. Level 30. Rawhide Liner dá 480 a 120 XP ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Level 35. Nice Leather Roll dá 560 a 140 XP. Level 43. Quality Leather Roll dá 688 a 172 XP ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Většina receptů potřebuje Tanning Rack v blízkosti. Racky jsou v Serbule, Eltibule, Red Wing Casino, Sun Vale, Kur Mountains, Rahu, New Prestonbule Cave a Fae Realm ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Tannin Powder prodává Therese. Rough stojí 7 councils, Decent 15 councils při Friends favor a Quality 37 councils při Close Friends favor ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning), [wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)).
+- Level 1. Shoddy Leather Roll gives 40 XP for the first craft and 10 XP normally. Leather Strips come in four variants, and they give 100 XP for the first craft and 10 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Level 5. Dye Leather Armor with one color gives 80 XP for the first craft and 20 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Level 8. Rough Leather Roll gives 128 XP for the first craft and 32 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Level 18. Crude Leather Roll gives 288 XP for the first craft and 72 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Level 20. Rawhide Sheet gives 320 XP for the first craft and 80 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Level 25. Dye Leather Armor with two colors gives 400 XP for the first craft and 100 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Level 28. Decent Leather Roll gives 448 XP for the first craft and 112 XP normally. Level 30. Rawhide Liner gives 480 XP for the first craft and 120 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Level 35. Nice Leather Roll gives 560 XP for the first craft and 140 XP normally. Level 43. Quality Leather Roll gives 688 XP for the first craft and 172 XP normally ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Most recipes need a Tanning Rack nearby. Racks are in Serbule, Eltibule, Red Wing Casino, Sun Vale, the Kur Mountains, Rahu, New Prestonbule Cave and the Fae Realm ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Therese sells Tannin Powder. Rough costs 7 councils, Decent costs 15 councils at Friends favor, and Quality costs 37 councils at Close Friends favor ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning), [wiki: Therese](https://wiki.projectgorgon.com/wiki/Therese)).
 
-## Závislosti
+## Dependencies
 
-- Skinning dodává kůže ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Leatherworking přebírá Rolls ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Rawhide Sheet je potřeba pro Nice a Quality Storage Crate v Carpentry ([wiki: Carpentry](https://wiki.projectgorgon.com/wiki/Carpentry)).
-- Odměny: +1 Skinning na levelu 20, +1 Textile Creation na levelech 10 a 30, +1 Tailoring na levelu 40 a +1 Leatherworking na levelech 50 a 60 ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Skinning supplies hides ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Leatherworking takes the Rolls ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- Nice and Quality Storage Crates in Carpentry need a Rawhide Sheet ([wiki: Carpentry](https://wiki.projectgorgon.com/wiki/Carpentry)).
+- Tanning gives +1 Skinning at level 20, +1 Textile Creation at levels 10 and 30, +1 Tailoring at level 40, and +1 Leatherworking at levels 50 and 60 ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
 
-## Nejasnosti
+## Open questions
 
-- Research neuvádí recepty nad level 43 ani cenu odemknutí. TODO ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
-- Podmínky úkolu „Power Potions!“ research nepopisuje. TODO.
+- The research has no recipes above level 43 and no unlock cost. TODO ([wiki: Tanning](https://wiki.projectgorgon.com/wiki/Tanning)).
+- The research does not describe the conditions for the "Power Potions!" quest. TODO.

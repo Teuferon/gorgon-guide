@@ -1,33 +1,33 @@
-Mentalism pro Archery nabízí léčení, skupinové buffy a útoky. Nemá tank, ale nevyžaduje pet ani spotřební materiál, takže je záložní variantou k Animal Handling ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+For Archery, Mentalism offers healing, group buffs and attacks. It does not tank, but it needs no pet or consumables, so it is a backup to Animal Handling ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
 
-## Kde začít
+## Where to start
 
-- Echur v Serbule Keep učí Mentalism za 0 councils ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)). Podmínky odemknutí jsou nejasné, viz Nejasnosti.
-- Echur snižuje favor, když zabíjíte zvířata v jeho blízkosti ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
-- Mu a Yoy učí v Myconian Cave. Rohina učí levely 51 až 70. Raina učí 71 až 80. Reinath pod Povus a Sagiso učí 81 až 100 ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- Echur in Serbule Keep teaches Mentalism for 0 councils ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)). The unlock conditions are unclear. See Open questions.
+- Echur lowers your favor when you kill animals near him ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
+- Mu and Yoy teach in Myconian Cave. Rohina teaches levels 51 to 70. Raina teaches levels 71 to 80. Reinath under Povus and Sagiso teach levels 81 to 100 ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
 
-## Postup podle levelů
+## Leveling path
 
-- Levely 1 až 9. Psi Waves jsou skupinové buffy. Health se odemyká na levelu 1, Armor na 5, Power na 10 a Adrenaline na 16. Adrenaline přidává přímé poškození. Všechny čtyři sdílejí jeden cooldown ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
-- Mindreave na levelu 3 je základní Psychic útok, který ignoruje brnění. System Shock na levelu 7 je core útok typu Electric ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
-- Revitalize, minor léčení, se odemyká na levelu 9. Reconstruct, major léčení, na levelu 13 léčí 80 ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)). Restorative Arrow z Archery léčí 55, ale stojí šíp a 21 Power ([wiki: Archery](https://wiki.projectgorgon.com/wiki/Archery), [wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
-- Levely 15 až 26. Agonize, epic, na levelu 15. Mindworm, Psychic DoT, na 20. Electrify na 22. Panic Charge, AoE, na 26 ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
-- Echurovy hangouty dávají 50 až 450 Meditation XP za hangout ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
-- Rohina učí levely 51 až 60 za 20 000 councils a 61 až 70 za 100 000 councils. Wiki u těchto údajů píše, že požadavky na favor nejsou potvrzené ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- Levels 1 to 9. Psi Waves are group buffs. Health unlocks at level 1, Armor at 5, Power at 10 and Adrenaline at 16. Adrenaline adds direct damage. All four share one cooldown ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- Mindreave at level 3 is the basic Psychic attack, and it ignores armor. System Shock at level 7 is a core Electric attack ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- Revitalize, a minor heal, unlocks at level 9. Reconstruct, a major heal, unlocks at level 13 and heals 80 ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)). Restorative Arrow from Archery heals 55, but it costs an arrow and 21 Power ([wiki: Archery](https://wiki.projectgorgon.com/wiki/Archery), [wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- Levels 15 to 26. Agonize, an epic ability, at level 15. Mindworm, a Psychic damage-over-time attack, at 20. Electrify at 22. Panic Charge, an area attack, at 26 ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- Echur's hangouts give 50 to 450 Meditation XP per hangout ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
+- Rohina teaches levels 51 to 60 for 20,000 councils and levels 61 to 70 for 100,000 councils. The wiki says the favor requirements for these are not confirmed ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
 
-## Nejlevnější cesta
+## Cheapest route
 
-- Start je nejlevnější. Echur učí za 0 councils, takže Mentalism můžete vyzkoušet, pokud pet nesedí ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
+- The start is the cheapest. Echur teaches for 0 councils, so you can try Mentalism if the pet does not suit you ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
 
-## Závislosti
+## Dependencies
 
-- Meditation je pro Mentalism synergie na levelu 40. Echurovy hangouty dávají Meditation XP ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism), [wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
-- Komunitní FAQ píše, že Mentalism je „a good side skill for those who use a lot of mana in their primary combat skill“. Archery spotřebovává Power, který roste s levelem, například Aimed Shot 9 stojí 57 Power ([projectgorgonguide.com: faq](https://projectgorgonguide.com/doku.php?id=faq), [wiki: Archery](https://wiki.projectgorgon.com/wiki/Archery)).
-- Gorgon Codex zahrnuje Mentalism mezi 18 skilly, které se s Archery dají kombinovat. Jde jen o seznam kompatibility, ne o hodnocení ([Codex: Archery](https://www.gorgoncodex.com/guides/skills/archery)).
+- Meditation is a synergy for Mentalism at level 40. Echur's hangouts give Meditation XP ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism), [wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur)).
+- A community FAQ says Mentalism is "a good side skill for those who use a lot of mana in their primary combat skill". Archery uses Power, which grows with level. For example, Aimed Shot 9 costs 57 Power ([projectgorgonguide.com: faq](https://projectgorgonguide.com/doku.php?id=faq), [wiki: Archery](https://wiki.projectgorgon.com/wiki/Archery)).
+- Gorgon Codex includes Mentalism among the 18 skills that can be combined with Archery. This is only a compatibility list, not a rating ([Codex: Archery](https://www.gorgoncodex.com/guides/skills/archery)).
 
-## Nejasnosti
+## Open questions
 
-- Podmínka odemknutí se v zdrojích liší. Wiki Echur uvádí Friends favor. Wiki Mentalism uvádí „after completing a few errands“. Codex uvádí „Learn Mentalism from Echur“ mezi cíli v Serbule. Pravděpodobně jde o stejnou věc, ale nelze to potvrdit ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur), [wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism), [Codex: Getting Started](https://www.gorgoncodex.com/guides/getting-started)).
-- Ceny 51 až 80 nemají potvrzené požadavky na favor. Raina za 400 000 councils plus Royal Jelly je nepotvrzená ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
-- Wiki neuvádí, zda výbava pro Mentalism koliduje s lukem ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
-- Starší fórum uvádí Mentalism, Bard, Druid, Psychology a Priest jako vhodné k Archery. Jde o starý příspěvek, který se nepodařilo otevřít, takže zdroj je slabý.
+- The unlock condition differs between sources. The Echur wiki page says Friends favor. The Mentalism wiki page says "after completing a few errands". Codex lists "Learn Mentalism from Echur" among the Serbule goals. These are probably the same thing, but this cannot be confirmed ([wiki: Echur](https://wiki.projectgorgon.com/wiki/Echur), [wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism), [Codex: Getting Started](https://www.gorgoncodex.com/guides/getting-started)).
+- The levels 51 to 80 do not have confirmed favor requirements. Raina's price of 400,000 councils plus Royal Jelly is not confirmed ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- The wiki does not say whether Mentalism gear conflicts with a bow ([wiki: Mentalism](https://wiki.projectgorgon.com/wiki/Mentalism)).
+- An older forum lists Mentalism, Bard, Druid, Psychology and Priest as suitable for Archery. It is an old post that did not open, so the source is weak.
