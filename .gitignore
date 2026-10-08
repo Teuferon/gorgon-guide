@@ -2,3 +2,6 @@ data/raw/
 node_modules/
 dist/
 *.tsbuildinfo
+
+# wiki cache (scripts/fetch-wiki.mjs)
+data/wiki-raw/
