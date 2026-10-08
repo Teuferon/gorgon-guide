@@ -15,7 +15,7 @@ Decisions the user made:
 - The app is English only: UI, guides and README. Internal notes in `docs/` may stay Czech. Talk to the user in Czech.
 - No player market prices. Only vendor prices count, because player shop prices vary too much.
 - Drop and training locations come from the wiki. If the wiki does not have something, leave it out rather than guess.
-- The repo is public and deploys to GitHub Pages.
+- The repo is public and deploys to GitHub Pages: https://teuferon.github.io/gorgon-guide/
 - All writing follows `.claude/skills/unslop/SKILL.md` (see `AGENTS.md`).
 
 ## What exists

@@ -1,6 +1,7 @@
 # Gorgon Guide
 
 A personal guide for the game Project Gorgon. You enter your skill levels and the app shows what to do next. Items you finish disappear from the lists.
+nLive version: https://teuferon.github.io/gorgon-guide/
 
 ## What the app does
 
