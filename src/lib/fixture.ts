@@ -77,6 +77,37 @@ export function fixtureData() {
     },
     areas: { AreaTown: "Town" },
     quests: { "9": { name: "Feed the King", npc: "AreaTown/NPC_Chef", location: "Town" } },
+    wiki: {
+      meta: { generatedAt: "", source: "https://wiki.example", pageUrlTemplate: "https://wiki.example/wiki/{title}" },
+      zones: {
+        Starter: { name: "Starter", page: "Starter", kind: "zone", levels: "1-10", minLevel: 1, maxLevel: 10, monsters: [{ name: "Rat", lootLevel: 3 }, { name: "Wolf", lootLevel: 8 }] },
+        Middle: { name: "Middle", page: "Middle Lands", kind: "zone", levels: "10-30", minLevel: 10, maxLevel: 30, monsters: [{ name: "Wolf", lootLevel: 12 }, { name: "Bear", lootLevel: 22 }, { name: "Spider", lootLevel: 28 }, { name: "Blob" }] },
+        High: { name: "High", page: "High", kind: "zone", levels: "40-50", minLevel: 40, maxLevel: 50, monsters: [{ name: "Troll", lootLevel: 45 }] },
+        Sewer: { name: "Sewer", page: "Sewer", kind: "dungeon", levels: "0", minLevel: 0, maxLevel: 0, monsters: [{ name: "Rat", lootLevel: 20 }] },
+        Empty: { name: "Empty", page: "Empty", kind: "zone", levels: "15-25", minLevel: 15, maxLevel: 25, monsters: [] },
+        Vague: { name: "Vague", page: "Vague", kind: "zone", levels: "18-24", minLevel: 18, maxLevel: 24, monsters: [{ name: "Blob" }] },
+      },
+      monsters: {
+        Rat: { type: "Rodent", zones: [{ zone: "Starter" }], tame: { level: 1, type: "Rat" } },
+        Wolf: { type: "Canine", zones: [{ zone: "Middle" }] },
+        Cat: { type: "Feline", zones: [{ zone: "Middle" }], tame: { level: 20, type: "Big Cat" } },
+        Bear: { type: "Bear", zones: [{ zone: "High" }], tame: { level: 40, type: "Bear" } },
+        Tiger: { type: "Feline", zones: [{ zone: "Middle" }], tame: { level: 16, type: "Big Cat" } },
+      },
+      itemLocations: {
+        "100": { name: "Salt", wiki: "Salt", loot: [{ mob: "Rat" }, { mob: "Wolf", rarity: "common" }], lootTotal: 7, buy: [
+          { npc: "Chef", zone: "Town", cost: 37, qty: 5, favor: "Neutral" },
+          { npc: "Peddler", zone: "Hills", cost: 9 },
+          { npc: "Gold Seller", zone: "Desert", cost: 7, currency: "gold" },
+        ] },
+        "101": { name: "Raw Meat", wiki: "Raw Meat", skin: ["Wolf"], gather: [{ skill: "Foraging", level: 5, zones: ["Starter", "Middle"] }], gatherNote: "Free text." },
+        "102": { name: "Cheap Beef", loot: [{ mob: "Ghost" }], lootTotal: 1 },
+      },
+      npcs: {
+        NPC_Chef: { name: "Chef", zone: "Town", town: "Chef's Kitchen", location: "Next to the oven.", wiki: "Chef" },
+        NPC_Smith: { name: "Smith", zone: "Town", wiki: "Smith" },
+      },
+    },
     abilities: {
       Shot1: { name: "Shot", skill: "Archery", level: 1 },
       OrcShot1: { name: "Shot", skill: "Archery", level: 1 },

@@ -27,6 +27,8 @@ export interface AppState {
   tracked: Record<string, boolean>;
   /** Recipe IDs whose first-time bonus the player already took. */
   doneRecipes: Record<string, true>;
+  /** Roadmap milestone IDs ticked off by hand. */
+  roadmapDone: Record<string, true>;
   customTasks: CustomTask[];
   settings: Settings;
 }
@@ -37,6 +39,7 @@ export function defaultState(): AppState {
     levels: { ...DEFAULT_LEVELS },
     tracked: Object.fromEntries(DEFAULT_TRACKED.map((k) => [k, true])),
     doneRecipes: {},
+    roadmapDone: {},
     customTasks: [],
     settings: { usefulThreshold: DEFAULT_USEFUL_THRESHOLD, rankBy: "now" },
   };
@@ -54,6 +57,7 @@ export type Action =
   | { type: "setLevel"; skill: string; level: number }
   | { type: "setTracked"; skill: string; tracked: boolean }
   | { type: "setRecipeDone"; recipe: string; done: boolean }
+  | { type: "setMilestoneDone"; id: string; done: boolean }
   | { type: "addTask"; task: CustomTask }
   | { type: "setTaskDone"; id: string; done: boolean }
   | { type: "removeTask"; id: string }
@@ -72,6 +76,12 @@ export function reduce(state: AppState, action: Action): AppState {
       if (action.done) doneRecipes[action.recipe] = true;
       else delete doneRecipes[action.recipe];
       return { ...state, doneRecipes };
+    }
+    case "setMilestoneDone": {
+      const roadmapDone = { ...state.roadmapDone };
+      if (action.done) roadmapDone[action.id] = true;
+      else delete roadmapDone[action.id];
+      return { ...state, roadmapDone };
     }
     case "addTask":
       return { ...state, customTasks: [...state.customTasks, action.task] };
@@ -114,6 +124,10 @@ export function sanitizeState(raw: unknown): AppState | undefined {
   if (isObject(raw.doneRecipes)) {
     for (const [k, v] of Object.entries(raw.doneRecipes)) if (v === true) doneRecipes[k] = true;
   }
+  const roadmapDone: Record<string, true> = {};
+  if (isObject(raw.roadmapDone)) {
+    for (const [k, v] of Object.entries(raw.roadmapDone)) if (v === true) roadmapDone[k] = true;
+  }
   const customTasks: CustomTask[] = [];
   if (Array.isArray(raw.customTasks)) {
     for (const t of raw.customTasks) {
@@ -135,7 +149,15 @@ export function sanitizeState(raw: unknown): AppState | undefined {
     isObject(raw.settings) && (raw.settings.rankBy === "now" || raw.settings.rankBy === "repeat")
       ? raw.settings.rankBy
       : base.settings.rankBy;
-  return { version: STATE_VERSION, levels, tracked, doneRecipes, customTasks, settings: { usefulThreshold, rankBy } };
+  return {
+    version: STATE_VERSION,
+    levels,
+    tracked,
+    doneRecipes,
+    roadmapDone,
+    customTasks,
+    settings: { usefulThreshold, rankBy },
+  };
 }
 
 export const EXPORT_FORMAT = "gorgon-guide";

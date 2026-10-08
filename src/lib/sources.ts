@@ -1,21 +1,28 @@
 import type { GameData, RecipeIngredient } from "./types";
+import { npcLocation, resolveWikiItem, wikiBuys, type NpcLocation, type PriceInfo, type WikiItemInfo } from "./wiki";
 
 /** Subset of the game data the source resolution reads. */
 export type SourceData = Pick<
   GameData,
-  "npcs" | "areas" | "items" | "itemSources" | "recipes" | "quests" | "recipeSources" | "skills" | "itemsByKeyword"
+  "npcs" | "areas" | "items" | "itemSources" | "recipes" | "quests" | "recipeSources" | "skills" | "itemsByKeyword" | "wiki"
 >;
 
 export interface VendorInfo {
   npc: string;
   npcName: string;
   areaName: string;
-  /** Minimum favor for the shop, only set when it is higher than the default. */
+  /** Favor needed. The wiki price row wins over the minimum favor of the shop. */
   favor?: string;
+  /** Where the NPC stands, from the wiki. */
+  location?: NpcLocation;
+  /** Wiki price, a community fact. The official data has no prices. */
+  price?: PriceInfo;
 }
 
 export interface ItemSourceInfo {
   vendors: VendorInfo[];
+  /** Wiki facts on top of the official sources: drops, gathering, growing. */
+  wiki?: WikiItemInfo;
   /** Text labels for sources other than a vendor. Empty when a vendor sells the item. */
   labels: string[];
 }
@@ -51,7 +58,34 @@ function vendorInfo(data: SourceData, npcKey: string): VendorInfo | undefined {
   const npc = data.npcs[npcKey];
   if (!npc) return undefined; // test or admin NPCs that are not in npcs.json
   const favor = npc.storeFavor && !DEFAULT_FAVORS.has(npc.storeFavor) ? npc.storeFavor : undefined;
-  return { npc: npcKey, npcName: npc.name, areaName: areaName(data, npc.area), favor };
+  const info: VendorInfo = { npc: npcKey, npcName: npc.name, areaName: areaName(data, npc.area), favor };
+  const location = npcLocation(data, npcKey);
+  if (location) info.location = location;
+  return info;
+}
+
+/**
+ * Vendors for an item: the official vendor list is the base. Wiki price rows are matched to
+ * those vendors by NPC name. Wiki rows for NPCs the official list does not have are added.
+ * Priced vendors come first, cheapest per piece first.
+ */
+function resolveVendors(data: SourceData, itemId: number | string, official: string[]): VendorInfo[] {
+  const vendors = official.map((k) => vendorInfo(data, k)).filter((v): v is VendorInfo => !!v);
+  const buys = wikiBuys(data, itemId);
+  const used = new Set<number>();
+  for (const v of vendors) {
+    const i = buys.findIndex((b, idx) => !used.has(idx) && b.buy.npc.toLowerCase() === v.npcName.toLowerCase());
+    if (i === -1) continue;
+    used.add(i);
+    v.price = buys[i].price;
+    v.favor = buys[i].price.favor ?? v.favor;
+  }
+  buys.forEach((b, i) => {
+    if (used.has(i)) return;
+    vendors.push({ npc: "", npcName: b.buy.npc, areaName: b.buy.zone ?? "", favor: b.price.favor, price: b.price });
+  });
+  const rank = (v: VendorInfo) => (v.price ? (v.price.currency === "councils" ? 0 : 1) : 2);
+  return vendors.sort((a, b) => rank(a) - rank(b) || (a.price?.perUnit ?? 0) - (b.price?.perUnit ?? 0));
 }
 
 /** Labels for the source types that have no ID (item-sources "other" field). */
@@ -86,10 +120,10 @@ function npcLabel(data: SourceData, key: string): string {
 /** Where an item comes from. A vendor wins over every other source. */
 export function resolveItemSource(data: SourceData, itemId: number | string): ItemSourceInfo {
   const src = data.itemSources[String(itemId)];
-  if (!src) return { vendors: [], labels: [NO_SOURCE] };
-
-  const vendors = (src.vendor ?? []).map((k) => vendorInfo(data, k)).filter((v): v is VendorInfo => !!v);
-  if (vendors.length > 0) return { vendors, labels: [] };
+  const wiki = resolveWikiItem(data, itemId);
+  const vendors = resolveVendors(data, itemId, src?.vendor ?? []);
+  if (vendors.length > 0) return { vendors, labels: [], wiki };
+  if (!src) return { vendors: [], labels: wiki ? [] : [NO_SOURCE], wiki };
 
   const labels: string[] = [];
   const add = (l: string | undefined) => {
@@ -110,8 +144,8 @@ export function resolveItemSource(data: SourceData, itemId: number | string): It
   if (src.gift?.length) add("gift from an NPC");
   if (src.hangout?.length) add("hang-out reward");
   if (src.item?.length) add("obtained from another item");
-  if (labels.length === 0) labels.push(NO_SOURCE);
-  return { vendors: [], labels: labels.slice(0, MAX_LABELS) };
+  if (labels.length === 0 && !wiki) labels.push(NO_SOURCE);
+  return { vendors: [], labels: labels.slice(0, MAX_LABELS), wiki };
 }
 
 /** Looks up an ingredient. Keyword ingredients ("any Cheap Meat") list a few matching items. */
@@ -142,12 +176,12 @@ export function resolveIngredient(data: SourceData, ing: RecipeIngredient): Reso
 }
 
 export type RecipeSourceInfo =
-  | { kind: "training"; npc: string; npcName: string; areaName: string }
+  | { kind: "training"; npc: string; npcName: string; areaName: string; location?: NpcLocation }
   | { kind: "skill"; skill: string; skillName: string; level: number }
   | { kind: "quest"; name: string; npcName?: string; location?: string }
   | { kind: "item"; name: string }
-  | { kind: "hangout"; npcName: string; areaName: string }
-  | { kind: "gift"; npcName: string; areaName: string }
+  | { kind: "hangout"; npcName: string; areaName: string; location?: NpcLocation }
+  | { kind: "gift"; npcName: string; areaName: string; location?: NpcLocation }
   | { kind: "unknown" };
 
 /** Where a recipe is learned. */
@@ -155,10 +189,14 @@ export function resolveRecipeSources(data: SourceData, recipeId: number | string
   const src = data.recipeSources[String(recipeId)];
   const out: RecipeSourceInfo[] = [];
   if (src) {
-    const npcInfo = (key: string) => ({
-      npcName: npcLabel(data, key),
-      areaName: areaName(data, data.npcs[key]?.area),
-    });
+    const npcInfo = (key: string) => {
+      const location = npcLocation(data, key);
+      return {
+        npcName: npcLabel(data, key),
+        areaName: areaName(data, data.npcs[key]?.area),
+        ...(location ? { location } : {}),
+      };
+    };
     for (const key of src.training ?? []) out.push({ kind: "training", npc: key, ...npcInfo(key) });
     for (const s of src.skill ?? []) {
       out.push({ kind: "skill", skill: s.skill, skillName: data.skills[s.skill]?.name ?? s.skill, level: s.level });
@@ -183,9 +221,18 @@ export function resolveRecipeSources(data: SourceData, recipeId: number | string
 
 /** One-line description of a recipe source. */
 export function describeRecipeSource(s: RecipeSourceInfo): string {
+  return describe(s, false);
+}
+
+/** Same as describeRecipeSource without the area, for callers that add the wiki location instead. */
+export function describeRecipeSourceNoArea(s: RecipeSourceInfo): string {
+  return describe(s, true);
+}
+
+function describe(s: RecipeSourceInfo, omitArea: boolean): string {
   switch (s.kind) {
     case "training":
-      return s.areaName ? `trainer ${s.npcName} (${s.areaName})` : `trainer ${s.npcName}`;
+      return s.areaName && !omitArea ? `trainer ${s.npcName} (${s.areaName})` : `trainer ${s.npcName}`;
     case "skill":
       return `reward for reaching level ${s.level} in ${s.skillName}`;
     case "quest": {
@@ -195,9 +242,9 @@ export function describeRecipeSource(s: RecipeSourceInfo): string {
     case "item":
       return `taught by the item ${s.name}`;
     case "hangout":
-      return `hang-out with ${s.npcName}${s.areaName ? ` (${s.areaName})` : ""}`;
+      return `hang-out with ${s.npcName}${s.areaName && !omitArea ? ` (${s.areaName})` : ""}`;
     case "gift":
-      return `gift for ${s.npcName}${s.areaName ? ` (${s.areaName})` : ""}`;
+      return `gift for ${s.npcName}${s.areaName && !omitArea ? ` (${s.areaName})` : ""}`;
     case "unknown":
       return "source not in the data (possibly a starting recipe)";
   }
@@ -208,11 +255,12 @@ export interface TrainerInfo {
   npcName: string;
   areaName: string;
   favor?: string;
+  location?: NpcLocation;
 }
 
 /** NPCs that train a skill, sorted by name. Unlock cost is not part of the game data. */
 export function resolveTrainers(
-  data: Pick<GameData, "npcs" | "areas" | "trainersBySkill">,
+  data: Pick<GameData, "npcs" | "areas" | "trainersBySkill" | "wiki">,
   skillKey: string,
 ): TrainerInfo[] {
   return (data.trainersBySkill.get(skillKey) ?? [])
@@ -223,6 +271,7 @@ export function resolveTrainers(
         npcName: npc.name,
         areaName: areaName(data, npc.area),
         favor: npc.trainFavor && !DEFAULT_FAVORS.has(npc.trainFavor) ? npc.trainFavor : undefined,
+        location: npcLocation(data, key),
       };
     })
     .sort((a, b) => a.npcName.localeCompare(b.npcName));

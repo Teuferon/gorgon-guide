@@ -68,7 +68,7 @@ function Backup() {
     <section className="bg-panel border border-line rounded-lg p-3 space-y-2">
       <h2 className="font-semibold">Backup</h2>
       <p className="text-muted text-sm">
-        Export saves your levels, tracked skills, checked-off recipes and custom tasks to one JSON file. Import replaces
+        Export saves your levels, tracked skills, checked-off recipes, roadmap milestones and custom tasks to one JSON file. Import replaces
         that data in this browser.
       </p>
       <div className="flex flex-wrap items-center gap-2">

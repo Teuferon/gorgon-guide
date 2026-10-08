@@ -4,18 +4,22 @@ A personal guide for the game Project Gorgon. You enter your skill levels and th
 
 ## What the app does
 
+- **Roadmap.** The overall leveling order as milestones, grouped in phases. Milestones with a level condition (for example Fletching 33) finish by themselves when your levels reach it. You tick off the others by hand. The next three open milestones also show as "Where you are" on the Next steps page. The content is in `src/content/roadmap.json`.
 - **My skills.** A list of player skills with a level field and a "tracking" switch, a search box, and a split into combat and other skills. You can export the whole state to a JSON file and import it on another computer. A level of 0 means you have not learned the skill yet.
 - **Next steps.** One card per tracked skill. A card has:
   - recipes that still give XP at your level, sorted by estimated XP, with the first-craft bonus next to the regular XP;
   - a first-craft bonus checklist, with the next five recipes above your level under "Coming up";
   - ingredients, the place to learn each recipe, and the next unlocks from the skill rewards;
   - for a skill you have not learned (level 0), the trainer and the first recipes it unlocks;
-  - for a skill without recipes, a short note, a link to its guide, and a placeholder slot for training spots.
+  - for a combat skill, training spots for your level: zones whose recommended level range fits and a few monsters per zone, plus tameable animals for Animal Handling (see below);
+  - for a skill without recipes, a short note and a link to its guide.
   "Show completed" brings back the items you checked off.
 - **Skill page** (`#/skill/<InternalName>`). All recipes in level bands, level rewards, trainers, hints for raising the level cap, and the Markdown guide.
 - **Custom tasks.** Free-text tasks, optionally tied to a skill and a target level. They also show on the skill card.
 
-The game data has no shop prices. For ingredients the app shows the item's "base value", the vendor (NPC and area) or the kind of source. It shows no player market prices.
+The official game data has no shop prices. For ingredients the app starts from the official sources (vendor, other source types) and adds community data from the wiki on top: shop prices with the favor they need, which monsters drop the item and in which zone, where it is gathered or grown, and where each NPC stands. Each wiki fact links to its wiki page. When a wiki price exists, it replaces the "base value". The app shows no player market prices.
+
+Wiki data is community data. Monster levels are approximate (the loot level on the monster page, only some monsters have one), drop lists are reported by players, and zone levels are recommended player levels used as a stand-in for your skill level.
 
 The XP numbers are an estimate. Recipes have a `dropOff` field (level, percentage, step), but the formula for the XP drop is not documented. The app assumes that from `dropOff.level` on, the recipe loses `pct` of its base XP for every `rate` levels. Recipes below 50% of their base XP are hidden, and you can change that limit on the Next steps page. See `src/lib/xp.ts` and `docs/data-sources.md`.
 
@@ -49,7 +53,7 @@ npm run fetch-data
 
 `scripts/fetch-data.mjs` downloads the official JSON files from the developers' server when a new version is out and writes trimmed files to `src/data/`. The `--force` and `--offline` switches are described in `docs/data-sources.md`. After a refresh, run `npm test`. The tests on the real data catch schema changes.
 
-The files `src/data/wiki-*.json` come from a separate script, `scripts/fetch-wiki.mjs` (see `docs/wiki-data.md`). The app does not use them yet. They are meant for the training-spots slot on cards of skills without recipes.
+The files `src/data/wiki-*.json` come from a separate script, `scripts/fetch-wiki.mjs` (see `docs/wiki-data.md`). The app uses them for ingredient sources, NPC locations and training spots.
 
 ## Skill guides
 

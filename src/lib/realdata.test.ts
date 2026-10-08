@@ -5,6 +5,9 @@ import { createGameData } from "./gamedata";
 import { DEFAULT_LEVELS, filterSkills } from "./skills";
 import { describeRecipeSource, resolveIngredient, resolveRecipeSources, resolveTrainers } from "./sources";
 import { nextUnlocks } from "./unlocks";
+import { findTameable, findTrainingZones } from "./training";
+import { resolveItemSource } from "./sources";
+import { npcLocation } from "./wiki";
 import { firstTimePlan, firstTimeRecipes, introRecipes, rankRecipes } from "./xp";
 import type { RawGameData } from "./types";
 
@@ -21,6 +24,13 @@ const data = createGameData({
   areas: read("areas"),
   quests: read("quests"),
   abilities: read("abilities"),
+  wiki: {
+    meta: read("wiki-meta"),
+    zones: read("wiki-zones"),
+    monsters: read("wiki-monsters"),
+    itemLocations: read("wiki-item-locations"),
+    npcs: read("wiki-npcs"),
+  },
 } as RawGameData);
 
 describe("real data", () => {
@@ -48,6 +58,21 @@ describe("real data", () => {
     expect(plan.ahead.every((r) => r.level > 20)).toBe(true);
     expect(resolveTrainers(data, "Fletching").map((t) => t.npcName)).toContain("Elahil");
     expect(introRecipes(data.recipesByRewardSkill.get("Fletching")!)).toHaveLength(5);
+  });
+
+  it("adds wiki prices, drops and NPC locations", () => {
+    const salt = resolveItemSource(data, 5001);
+    expect(salt.vendors.some((v) => v.price && v.price.url.startsWith("https://wiki.projectgorgon.com/wiki/"))).toBe(true);
+    const feathers = resolveItemSource(data, 1139);
+    expect(feathers.wiki?.drops.length).toBeGreaterThan(0);
+    expect(feathers.wiki?.drops[0].url).toContain("https://wiki.projectgorgon.com/wiki/");
+    expect(npcLocation(data, "NPC_Elahil")?.text).toContain("Serbule");
+  });
+
+  it("finds training spots for the starting levels", () => {
+    expect(findTrainingZones(data.wiki, 20).length).toBeGreaterThan(0);
+    expect(findTrainingZones(data.wiki, 20).some((z) => z.monsters.length > 0)).toBe(true);
+    expect(findTameable(data.wiki, 15).length).toBeGreaterThan(0);
   });
 
   it("finds next unlocks for Archery at level 20", () => {

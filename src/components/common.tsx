@@ -62,4 +62,13 @@ export function WithData({ children }: { children: (data: GameData) => ReactNode
   return <>{children(s.data)}</>;
 }
 
+/** Small outbound link to a wiki page. */
+export function WikiLink({ href, children, title }: { href: string; children: ReactNode; title?: string }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" title={title ?? "Open the wiki page"} className="underline decoration-dotted">
+      {children}
+    </a>
+  );
+}
+
 export const fmtXp = (n: number): string => (Number.isInteger(n) ? String(n) : n.toFixed(1));

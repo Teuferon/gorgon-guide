@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Markdown from "react-markdown";
-import { advancementHints, allRewards, trainersFor } from "../lib/unlocks";
+import { advancementHints, allRewards } from "../lib/unlocks";
+import { resolveTrainers } from "../lib/sources";
 import { estimateXp, groupByLevelBand } from "../lib/xp";
 import { getLevel, isTracked } from "../lib/state";
 import { hasGuide, loadGuide } from "../lib/guides";
 import { useAppState } from "../store";
-import { Badge, LevelInput, Toggle, WithData } from "../components/common";
+import { Badge, LevelInput, Toggle, WikiLink, WithData } from "../components/common";
 import { RecipeRow } from "../components/RecipeRow";
 import type { GameData } from "../lib/types";
 
@@ -46,7 +47,7 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
   const level = getLevel(state, skillKey);
   const rewards = allRewards(data, skillKey);
   const hints = advancementHints(skill);
-  const trainers = trainersFor(data, skillKey);
+  const trainers = resolveTrainers(data, skillKey);
   const recipes = (data.recipesByRequiredSkill.get(skillKey) ?? []).filter((r) => !r.notObtainable);
   const bands = groupByLevelBand(recipes);
 
@@ -111,15 +112,17 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
           <p className="text-muted">No NPC trains this skill in the data.</p>
         ) : (
           <ul className="bg-panel border border-line rounded-lg p-3 space-y-1">
-            {trainers.map((k) => {
-              const npc = data.npcs[k];
-              return (
-                <li key={k}>
-                  {npc.name} <span className="text-muted">({data.areas[npc.area] ?? npc.area})</span>
-                  {npc.trainFavor && <span className="text-muted">, trains from favor {npc.trainFavor}</span>}
-                </li>
-              );
-            })}
+            {trainers.map((t) => (
+              <li key={t.npc}>
+                {t.npcName}{" "}
+                <span className="text-muted">
+                  (
+                  {t.location ? <WikiLink href={t.location.url}>{t.location.text}</WikiLink> : t.areaName}
+                  )
+                </span>
+                {t.favor && <span className="text-muted">, trains from favor {t.favor}</span>}
+              </li>
+            ))}
           </ul>
         )}
       </section>

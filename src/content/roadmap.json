@@ -1,0 +1,169 @@
+{
+  "phases": [
+    {
+      "id": "a",
+      "title": "Phase A. Now (Archery 20 to 35)",
+      "milestones": [
+        {
+          "id": "a-level-together",
+          "title": "Level Archery and Animal Handling together up to Archery 35",
+          "detail": "Keep fighting with both skills and keep the gap between them under 25 levels. Above a gap of 25 levels the abilities of the lower skill turn gray.",
+          "sources": [{ "label": "wiki: Skills", "url": "https://wiki.projectgorgon.com/wiki/Skills" }],
+          "auto": [{ "skill": "Archery", "level": 35 }]
+        },
+        {
+          "id": "a-elahil-favor",
+          "title": "Raise favor with Elahil to Comfortable, then Friends",
+          "detail": "Comfortable unlocks Fletching (500 councils), cheaper dowels and boxes, Advanced arrows and the hourly hang-outs that give Archery XP. Elahil stands in Serbule Keep.",
+          "sources": [{ "label": "wiki: Elahil", "url": "https://wiki.projectgorgon.com/wiki/Elahil" }]
+        },
+        {
+          "id": "a-skinning",
+          "title": "Level Skinning and Butchering on the corpses you kill anyway",
+          "detail": "Both skills level directly on corpses and give Feathers, Femur and meat. Skinning 15 gives +1 Animal Handling. Fainor sells a butchering knife, the price is not confirmed.",
+          "sources": [
+            { "label": "wiki: Skinning", "url": "https://wiki.projectgorgon.com/wiki/Skinning" },
+            { "label": "wiki: Butchering", "url": "https://wiki.projectgorgon.com/wiki/Butchering" }
+          ],
+          "auto": [{ "skill": "Skinning", "level": 15 }]
+        },
+        {
+          "id": "a-first-aid",
+          "title": "Learn First Aid and Armor Patching from Marna",
+          "detail": "Marna teaches both for free. Her hang-out gives 200 First Aid XP.",
+          "sources": [
+            { "label": "wiki: Marna", "url": "https://wiki.projectgorgon.com/wiki/Marna" },
+            { "label": "wiki: Armor Patching", "url": "https://wiki.projectgorgon.com/wiki/Armor_Patching" }
+          ]
+        },
+        {
+          "id": "a-buy-arrows",
+          "title": "Buy arrows from Elahil instead of crafting them",
+          "detail": "The prices are small (Beginner's 3, Basic 7, Advanced 15). The wiki does not say whether the price is per arrow or per bundle, so check it in the game.",
+          "sources": [{ "label": "wiki: Elahil", "url": "https://wiki.projectgorgon.com/wiki/Elahil" }]
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "title": "Phase B. Fletching and Carpentry (Archery 30 to 45)",
+      "milestones": [
+        {
+          "id": "b-carpentry",
+          "title": "Carpentry up to 30 for dowels and Empty Fletching Boxes",
+          "detail": "You can make dowels and boxes yourself from Oak Wood. You need a Handsaw, which Therese sells for 75 councils. Carpentry 10 gives Maple Dowels, 20 Cedar Dowels and 30 Spruce Dowels.",
+          "sources": [
+            { "label": "wiki: Therese", "url": "https://wiki.projectgorgon.com/wiki/Therese" },
+            { "label": "wiki: Carpentry", "url": "https://wiki.projectgorgon.com/wiki/Carpentry" }
+          ],
+          "auto": [{ "skill": "Carpentry", "level": 30 }]
+        },
+        {
+          "id": "b-alchemy-25",
+          "title": "Alchemy 25 for Weak Acidic Cleanser, before Fletching 30",
+          "detail": "From Fletching 30 you can hardly craft anything without Alchemy. Weak Acidic Cleanser is made at Alchemy 25. Azalak in Serbule teaches Alchemy.",
+          "sources": [
+            { "label": "wiki: Weak Acidic Cleanser", "url": "https://wiki.projectgorgon.com/wiki/Weak_Acidic_Cleanser" },
+            { "label": "wiki: Fletching", "url": "https://wiki.projectgorgon.com/wiki/Fletching" },
+            { "label": "wiki: Azalak", "url": "https://wiki.projectgorgon.com/wiki/Azalak" }
+          ],
+          "auto": [{ "skill": "Alchemy", "level": 25 }]
+        },
+        {
+          "id": "b-fletching-33",
+          "title": "Fletching 33 before Archery 42 (Expert's Arrow)",
+          "detail": "Craft each recipe once for the first-craft bonus (about 20,700 XP up to level 50, an estimate). From Archery 42 you need Expert's Arrow, which no NPC sells.",
+          "sources": [
+            { "label": "wiki: Fletching", "url": "https://wiki.projectgorgon.com/wiki/Fletching" },
+            { "label": "wiki: Expert's Arrow", "url": "https://wiki.projectgorgon.com/wiki/Expert%27s_Arrow" }
+          ],
+          "auto": [{ "skill": "Fletching", "level": 33 }]
+        },
+        {
+          "id": "b-cooking-gardening",
+          "title": "Cooking and Gardening on the side",
+          "detail": "Food gives regeneration and Gardening supplies the vegetables. Therese sells seeds from 7 councils.",
+          "sources": [{ "label": "wiki: Therese", "url": "https://wiki.projectgorgon.com/wiki/Therese" }]
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "title": "Phase C. The wall at level 50 (Archery 45 to 55)",
+      "milestones": [
+        {
+          "id": "c-save-councils",
+          "title": "Save 20,000 councils for each skill that hits the level 50 wall",
+          "detail": "Unlocking levels 51 to 60 costs 20,000 councils for Archery (Alravesa, Friends), 20,000 for Animal Handling (Gisli, Close Friends) and 20,000 for Fletching (Bellema). Levels 61 to 70 cost 91,000 for Archery and 100,000 for Animal Handling. Leave Fletching above 50 for later and buy arrowheads from Elahil and Sie Antry.",
+          "sources": [
+            { "label": "wiki: Alravesa", "url": "https://wiki.projectgorgon.com/wiki/Alravesa_the_All-Hunter" },
+            { "label": "wiki: Gisli", "url": "https://wiki.projectgorgon.com/wiki/Gisli" },
+            { "label": "wiki: Bellema Deftwhisper", "url": "https://wiki.projectgorgon.com/wiki/Bellema_Deftwhisper" }
+          ]
+        },
+        {
+          "id": "c-favor-for-50",
+          "title": "Get the favor for the level 50 unlocks",
+          "detail": "Alravesa needs Friends and Gisli needs Close Friends. Gifts that the NPC likes are the main way to raise favor, then quests and hang-outs. The Codex recommends favor with Alravesa for extra Archery XP at levels 50 and 60.",
+          "sources": [
+            { "label": "wiki: Favor", "url": "https://wiki.projectgorgon.com/wiki/Favor" },
+            { "label": "Codex: Archery", "url": "https://www.gorgoncodex.com/guides/skills/archery" }
+          ]
+        },
+        {
+          "id": "c-archery-50",
+          "title": "Reach Archery 50 before you start a third combat skill",
+          "detail": "A third skill would only raise the councils you need for the wall. Any combat skill at 50 is also the condition for Druid.",
+          "sources": [{ "label": "wiki: Druid", "url": "https://wiki.projectgorgon.com/wiki/Druid" }],
+          "auto": [{ "skill": "Archery", "level": 50 }]
+        },
+        {
+          "id": "c-druid",
+          "title": "At Archery 50, consider Druid",
+          "detail": "The Druid altar is in Druid Camp at the north tip of Sun Vale. The choice is permanent. Try Toxinball and Regrowth first. Check in the game that a bow counts as the wooden weapon Druid needs, because the wiki does not say it outright.",
+          "sources": [
+            { "label": "wiki: Druid", "url": "https://wiki.projectgorgon.com/wiki/Druid" },
+            { "label": "wiki: Silvia", "url": "https://wiki.projectgorgon.com/wiki/Silvia" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d",
+      "title": "Phase D. After the wall",
+      "milestones": [
+        {
+          "id": "d-mycology-45",
+          "title": "Mycology 45 for +1 Druid (only if you take Druid)",
+          "detail": "Mycology gives +1 Alchemy at 10 and 40, and +1 Druid at 45.",
+          "sources": [{ "label": "wiki: Mycology", "url": "https://wiki.projectgorgon.com/wiki/Mycology" }],
+          "auto": [{ "skill": "Mycology", "level": 45 }]
+        },
+        {
+          "id": "d-foraging",
+          "title": "Foraging for Gardening and Cooking",
+          "detail": "Foraging gathers wood for Carpentry and fruit for Cooking, and it feeds Gardening.",
+          "sources": [{ "label": "wiki: Foraging", "url": "https://wiki.projectgorgon.com/wiki/Foraging" }]
+        },
+        {
+          "id": "d-bowyery",
+          "title": "Optional: Bowyery from Denton Razor",
+          "detail": "Denton Razor in Vidaria teaches Bowyery. It gives Tuneup Kits and +1 Archery at 75.",
+          "sources": [
+            { "label": "wiki: Bowyery", "url": "https://wiki.projectgorgon.com/wiki/Bowyery" },
+            { "label": "wiki: Archery", "url": "https://wiki.projectgorgon.com/wiki/Archery" }
+          ]
+        },
+        {
+          "id": "d-mentalism-fallback",
+          "title": "Fallback: try Mentalism if the pet does not suit you",
+          "detail": "Echur in Serbule Keep teaches Mentalism for 0 councils. It gives healing and Psi Wave buffs but no tank. The wiki pages disagree on whether you need Friends favor first.",
+          "sources": [
+            { "label": "wiki: Echur", "url": "https://wiki.projectgorgon.com/wiki/Echur" },
+            { "label": "wiki: Mentalism", "url": "https://wiki.projectgorgon.com/wiki/Mentalism" }
+          ]
+        }
+      ]
+    }
+  ]
+}

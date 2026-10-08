@@ -1,6 +1,15 @@
-import { useState } from "react";
-import { describeRecipeSource, resolveIngredient, resolveRecipeSources, type ResolvedIngredient } from "../lib/sources";
-import { Badge, fmtXp } from "./common";
+import { Fragment, useState, type ReactNode } from "react";
+import {
+  describeRecipeSource,
+  describeRecipeSourceNoArea,
+  resolveIngredient,
+  resolveRecipeSources,
+  type RecipeSourceInfo,
+  type ResolvedIngredient,
+  type VendorInfo,
+} from "../lib/sources";
+import { formatPrice, type DropInfo, type WikiItemInfo } from "../lib/wiki";
+import { Badge, WikiLink, fmtXp } from "./common";
 import type { GameData, RecipeEntry } from "../lib/types";
 
 export interface RecipeRowProps {
@@ -18,6 +27,100 @@ export interface RecipeRowProps {
   firstTime?: { done: boolean; onChange: (done: boolean) => void };
 }
 
+const MAX_VENDORS = 3;
+
+function joinNodes(nodes: ReactNode[], sep = ", ") {
+  return nodes.map((n, i) => (
+    <Fragment key={i}>
+      {i > 0 && sep}
+      {n}
+    </Fragment>
+  ));
+}
+
+function Vendor({ v }: { v: VendorInfo }) {
+  return (
+    <li>
+      {v.npcName}
+      {v.location ? (
+        <>
+          {" "}
+          (<WikiLink href={v.location.url}>{v.location.text}</WikiLink>)
+        </>
+      ) : (
+        v.areaName && ` (${v.areaName})`
+      )}
+      {v.price && (
+        <>
+          {": "}
+          <WikiLink href={v.price.url} title="Open the vendor's price list on the wiki">
+            {formatPrice(v.price)}
+          </WikiLink>
+        </>
+      )}
+      {v.favor && <span className="text-muted">, favor {v.favor}</span>}
+    </li>
+  );
+}
+
+function mobLinks(drops: DropInfo[]) {
+  return joinNodes(
+    drops.map((d) => (
+      <Fragment key={d.mob}>
+        <WikiLink href={d.url}>{d.mob}</WikiLink>
+        {d.zone && ` (${d.zone})`}
+        {d.rarity && ` ${d.rarity}`}
+      </Fragment>
+    )),
+  );
+}
+
+function WikiFacts({ info }: { info: WikiItemInfo }) {
+  const more = info.dropTotal - info.drops.length;
+  return (
+    <div className="space-y-0.5">
+      {info.drops.length > 0 && (
+        <div>
+          Dropped by {mobLinks(info.drops)}
+          {more > 0 && (
+            <>
+              {" and "}
+              <WikiLink href={info.url}>{more} more</WikiLink>
+            </>
+          )}
+        </div>
+      )}
+      {info.skin.length > 0 && <div>Skinned from {mobLinks(info.skin)}</div>}
+      {info.butcher.length > 0 && <div>Butchered from {mobLinks(info.butcher)}</div>}
+      {info.gather.map((g, i) => (
+        <div key={i}>
+          Gathered with {g.skill}
+          {g.level !== undefined && ` ${g.level}`}
+          {g.zones.length > 0 && ` in ${g.zones.join(", ")}`}{" "}
+          <WikiLink href={info.url}>wiki</WikiLink>
+        </div>
+      ))}
+      {info.harvestZones.length > 0 && (
+        <div>
+          Harvested in {info.harvestZones.join(", ")} <WikiLink href={info.url}>wiki</WikiLink>
+        </div>
+      )}
+      {info.grow && (
+        <div>
+          Grown with Gardening from {info.grow.seed}, level {info.grow.level}, grow time {info.grow.growTime}{" "}
+          <WikiLink href={info.url}>wiki</WikiLink>
+        </div>
+      )}
+      {info.note && (
+        <details>
+          <summary className="cursor-pointer">Wiki note (free text, may be outdated)</summary>
+          <p>{info.note}</p>
+        </details>
+      )}
+    </div>
+  );
+}
+
 function Ingredient({ ing }: { ing: ResolvedIngredient }) {
   if (ing.kind === "keyword") {
     return (
@@ -32,24 +135,42 @@ function Ingredient({ ing }: { ing: ResolvedIngredient }) {
     );
   }
   const { source } = ing;
+  // A wiki price replaces the base value. The base value is only a game-data number, not a price.
+  const hasPrice = source.vendors.some((v) => v.price);
   return (
     <li>
       {ing.qty}x {ing.name}
-      {ing.baseValue !== undefined && <span className="text-muted">, base value {ing.baseValue}</span>}
-      <div className="text-muted text-sm">
-        {source.vendors.length > 0 ? (
-          <>
-            sold by{" "}
-            {source.vendors
-              .slice(0, 3)
-              .map((v) => `${v.npcName}${v.areaName ? ` (${v.areaName})` : ""}${v.favor ? `, favor ${v.favor}` : ""}`)
-              .join("; ")}
-            {source.vendors.length > 3 && ` and ${source.vendors.length - 3} more`}
-          </>
-        ) : (
-          source.labels.join("; ")
+      {!hasPrice && ing.baseValue !== undefined && <span className="text-muted">, base value {ing.baseValue}</span>}
+      <div className="text-muted text-sm space-y-0.5">
+        {source.vendors.length > 0 && (
+          <div>
+            Sold by
+            <ul className="list-disc pl-5">
+              {source.vendors.slice(0, MAX_VENDORS).map((v, i) => (
+                <Vendor key={`${v.npc}-${v.npcName}-${i}`} v={v} />
+              ))}
+            </ul>
+            {source.vendors.length > MAX_VENDORS && <div>and {source.vendors.length - MAX_VENDORS} more</div>}
+          </div>
         )}
+        {source.labels.length > 0 && <div>{source.labels.join("; ")}</div>}
+        {source.wiki && <WikiFacts info={source.wiki} />}
       </div>
+    </li>
+  );
+}
+
+function SourceLine({ s }: { s: RecipeSourceInfo }) {
+  const location = s.kind === "training" || s.kind === "hangout" || s.kind === "gift" ? s.location : undefined;
+  return (
+    <li>
+      {location ? describeRecipeSourceNoArea(s) : describeRecipeSource(s)}
+      {location && (
+        <>
+          {", "}
+          <WikiLink href={location.url}>{location.text}</WikiLink>
+        </>
+      )}
     </li>
   );
 }
@@ -75,8 +196,12 @@ function Details({ data, recipe }: { data: GameData; recipe: RecipeEntry }) {
         </div>
       )}
       <div>
-        <span className="text-muted">Where to learn: </span>
-        {sources.map(describeRecipeSource).join("; ")}
+        <div className="text-muted">Where to learn</div>
+        <ul className="list-disc pl-5">
+          {sources.map((s, i) => (
+            <SourceLine key={i} s={s} />
+          ))}
+        </ul>
       </div>
     </div>
   );

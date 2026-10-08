@@ -1,6 +1,7 @@
 import { Navigate, NavLink, Route, Routes } from "react-router-dom";
 import { gameMeta } from "./lib/data";
 import NextStepsPage from "./pages/NextStepsPage";
+import RoadmapPage from "./pages/RoadmapPage";
 import SkillsPage from "./pages/SkillsPage";
 import SkillDetailPage from "./pages/SkillDetailPage";
 import TasksPage from "./pages/TasksPage";
@@ -16,6 +17,7 @@ export default function App() {
           <span className="font-semibold text-lg">Gorgon Guide</span>
           <nav className="flex flex-wrap gap-1" aria-label="Main navigation">
             <NavLink to="/" end className={navClass}>Next steps</NavLink>
+            <NavLink to="/roadmap" className={navClass}>Roadmap</NavLink>
             <NavLink to="/skills" className={navClass}>My skills</NavLink>
             <NavLink to="/tasks" className={navClass}>Custom tasks</NavLink>
           </nav>
@@ -24,6 +26,7 @@ export default function App() {
       <main className="flex-1 w-full max-w-4xl mx-auto px-4 py-6">
         <Routes>
           <Route path="/" element={<NextStepsPage />} />
+          <Route path="/roadmap" element={<RoadmapPage />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/skill/:name" element={<SkillDetailPage />} />
           <Route path="/tasks" element={<TasksPage />} />
@@ -36,6 +39,7 @@ export default function App() {
       <footer className="border-t border-line text-muted text-sm">
         <div className="max-w-4xl mx-auto px-4 py-4 space-y-1">
           <p>{gameMeta.copyright}</p>
+          <p>Wiki links point to the community wiki at wiki.projectgorgon.com. Wiki facts are community data and can be incomplete or outdated.</p>
           <p>
             Project Gorgon game data, version {gameMeta.gameDataVersion}, downloaded {gameMeta.generatedAt.slice(0, 10)}.
           </p>

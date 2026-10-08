@@ -1,28 +1,46 @@
 import { describe, expect, it } from "vitest";
 import { fixtureData } from "./fixture";
-import { describeRecipeSource, resolveIngredient, resolveItemSource, resolveRecipeSources } from "./sources";
+import { describeRecipeSource, resolveIngredient, resolveItemSource, resolveRecipeSources, resolveTrainers } from "./sources";
 
 const data = fixtureData();
 
 describe("resolveItemSource", () => {
-  it("prefers vendors and skips NPCs missing from the data", () => {
+  it("prefers vendors over other sources and skips NPCs missing from the data", () => {
     const s = resolveItemSource(data, 100);
     expect(s.labels).toEqual([]);
-    expect(s.vendors).toEqual([{ npc: "NPC_Chef", npcName: "Chef", areaName: "Town", favor: "Comfortable" }]);
+    expect(s.vendors.map((v) => v.npcName)).toEqual(["Chef", "Peddler", "Gold Seller"]);
   });
-  it("labels other sources in Czech and drops the useless ones", () => {
+  it("adds wiki prices and locations on top of the official vendor and prefers the wiki favor", () => {
+    const [chef, peddler, gold] = resolveItemSource(data, 100).vendors;
+    expect(chef).toMatchObject({ npc: "NPC_Chef", areaName: "Town", favor: "Neutral" });
+    expect(chef.price).toMatchObject({ cost: 37, qty: 5, currency: "councils" });
+    expect(chef.price!.perUnit).toBeCloseTo(7.4);
+    expect(chef.location).toEqual({ text: "Town, Chef's Kitchen: Next to the oven", url: "https://wiki.example/wiki/Chef" });
+    expect(peddler).toMatchObject({ npc: "", npcName: "Peddler", areaName: "Hills" });
+    expect(gold.price!.currency).toBe("gold");
+  });
+  it("labels other sources and drops the useless ones", () => {
     const s = resolveItemSource(data, 101);
     expect(s.vendors).toEqual([]);
     expect(s.labels).toEqual(["monster drop", "butchering corpses", "crafted from recipe Easy, Mid and 1 more"]);
   });
-  it("falls back when only an unused source exists or the item is unknown", () => {
-    expect(resolveItemSource(data, 102).labels).toEqual(["source not in the data"]);
+  it("attaches wiki drop and gathering facts", () => {
+    const s = resolveItemSource(data, 101);
+    expect(s.wiki?.skin.map((d) => d.mob)).toEqual(["Wolf"]);
+    expect(s.wiki?.gather[0]).toMatchObject({ skill: "Foraging", level: 5, zones: ["Starter", "Middle"] });
+  });
+  it("uses wiki-only knowledge instead of the missing-source label", () => {
+    const s = resolveItemSource(data, 102);
+    expect(s.labels).toEqual([]);
+    expect(s.wiki?.drops[0].mob).toBe("Ghost");
+  });
+  it("falls back when the item is unknown everywhere", () => {
     expect(resolveItemSource(data, 999).labels).toEqual(["source not in the data"]);
   });
 });
 
 describe("resolveIngredient", () => {
-  it("returns the base value, not a price", () => {
+  it("keeps the base value next to the vendors", () => {
     const ing = resolveIngredient(data, { id: 100, name: "Salt", qty: 1 });
     expect(ing).toMatchObject({ kind: "item", name: "Salt", baseValue: 3, qty: 1 });
   });
@@ -42,7 +60,20 @@ describe("resolveRecipeSources", () => {
       "taught by the item Cookbook",
     ]);
   });
+  it("adds the wiki location of a trainer", () => {
+    const [s] = resolveRecipeSources(data, 1);
+    expect(s.kind === "training" && s.location?.text).toBe("Town, Chef's Kitchen: Next to the oven");
+  });
   it("reports a missing source", () => {
     expect(resolveRecipeSources(data, 5)).toEqual([{ kind: "unknown" }]);
+  });
+});
+
+describe("resolveTrainers", () => {
+  it("lists trainers with the wiki location", () => {
+    const trainers = resolveTrainers(data, "Cooking");
+    expect(trainers.map((t) => t.npcName)).toEqual(["Chef", "Smith"]);
+    expect(trainers[0].location?.url).toBe("https://wiki.example/wiki/Chef");
+    expect(trainers[0].favor).toBeUndefined();
   });
 });

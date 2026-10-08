@@ -7,7 +7,7 @@ import { plural } from "../lib/skills";
 import { getLevel } from "../lib/state";
 import { hasGuide } from "../lib/guides";
 import { useAppState } from "../store";
-import { LevelInput } from "./common";
+import { LevelInput, WikiLink } from "./common";
 import { RecipeRow } from "./RecipeRow";
 import { TrainingSpots } from "./TrainingSpots";
 import type { GameData, RecipeEntry } from "../lib/types";
@@ -33,7 +33,15 @@ function LearnSection({ data, skillKey, intro }: { data: GameData; skillKey: str
           {trainers.map((t) => (
             <li key={t.npc}>
               Trainer {t.npcName}
-              {t.areaName && ` (${t.areaName})`}
+              {t.location ? (
+                <>
+                  {" ("}
+                  <WikiLink href={t.location.url}>{t.location.text}</WikiLink>
+                  {")"}
+                </>
+              ) : (
+                t.areaName && ` (${t.areaName})`
+              )}
               {t.favor && <span className="text-muted">, trains from favor {t.favor}</span>}
             </li>
           ))}
@@ -57,7 +65,19 @@ function LearnSection({ data, skillKey, intro }: { data: GameData; skillKey: str
 }
 
 /** Skills without recipes: a short line, a guide link and the slot for training spots. */
-function NoRecipes({ skillKey, name, level, combat }: { skillKey: string; name: string; level: number; combat: boolean }) {
+function NoRecipes({
+  data,
+  skillKey,
+  name,
+  level,
+  combat,
+}: {
+  data: GameData;
+  skillKey: string;
+  name: string;
+  level: number;
+  combat: boolean;
+}) {
   return (
     <div className="space-y-2">
       <p className="text-muted">
@@ -68,7 +88,7 @@ function NoRecipes({ skillKey, name, level, combat }: { skillKey: string; name: 
           <Link to={`/skill/${skillKey}`}>See the {name} page.</Link>
         )}
       </p>
-      <TrainingSpots skillKey={skillKey} level={level} />
+      {combat && !(level === 0) && <TrainingSpots data={data} skillKey={skillKey} level={level} />}
     </div>
   );
 }
@@ -194,7 +214,7 @@ export function SkillCard({
       </div>
 
       {!hasRecipes ? (
-        <NoRecipes skillKey={skillKey} name={skill.name} level={level} combat={!!skill.combat} />
+        <NoRecipes data={data} skillKey={skillKey} name={skill.name} level={level} combat={!!skill.combat} />
       ) : (
         !notLearned && (
           <>

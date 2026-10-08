@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAppState } from "../store";
 import { Toggle, WithData } from "../components/common";
 import { SkillCard } from "../components/SkillCard";
+import { WhereYouAre } from "../components/WhereYouAre";
 import type { RankBy } from "../lib/xp";
 
 export default function NextStepsPage() {
@@ -19,6 +20,7 @@ export default function NextStepsPage() {
         values for recipes are an estimate. The game data does not say exactly how XP drops when your level is higher
         than the recipe needs, so treat the numbers as approximate.
       </p>
+      <WhereYouAre />
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
         <Toggle checked={showDone} onChange={setShowDone}>show completed</Toggle>
         <Toggle checked={showLow} onChange={setShowLow}>show low-XP recipes</Toggle>

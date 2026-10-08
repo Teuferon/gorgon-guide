@@ -12,7 +12,7 @@ let cache: Promise<GameData> | undefined;
  */
 export function loadGameData(): Promise<GameData> {
   cache ??= (async () => {
-    const [skills, xptables, recipes, items, recipeSources, itemSources, npcs, areas, quests, abilities] =
+    const [skills, xptables, recipes, items, recipeSources, itemSources, npcs, areas, quests, abilities, wz, wm, wi, wn, wmeta] =
       await Promise.all([
         import("../data/skills.json"),
         import("../data/xptables.json"),
@@ -24,6 +24,11 @@ export function loadGameData(): Promise<GameData> {
         import("../data/areas.json"),
         import("../data/quests.json"),
         import("../data/abilities.json"),
+        import("../data/wiki-zones.json"),
+        import("../data/wiki-monsters.json"),
+        import("../data/wiki-item-locations.json"),
+        import("../data/wiki-npcs.json"),
+        import("../data/wiki-meta.json"),
       ]);
     const raw = {
       meta: gameMeta,
@@ -37,6 +42,13 @@ export function loadGameData(): Promise<GameData> {
       areas: areas.default,
       quests: quests.default,
       abilities: abilities.default,
+      wiki: {
+        meta: wmeta.default,
+        zones: wz.default,
+        monsters: wm.default,
+        itemLocations: wi.default,
+        npcs: wn.default,
+      },
     } as unknown as RawGameData;
     return createGameData(raw);
   })();

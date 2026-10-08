@@ -138,7 +138,83 @@ export interface Ability {
   icon?: number;
 }
 
+/** Community data from the wiki (src/data/wiki-*.json, see docs/wiki-data.md). Not official. */
+export interface WikiMeta {
+  generatedAt: string;
+  source: string;
+  /** Page URL with a {title} placeholder. Spaces in the title become underscores. */
+  pageUrlTemplate: string;
+}
+
+export interface WikiZone {
+  name: string;
+  page: string;
+  kind: string;
+  levels?: string;
+  minLevel?: number;
+  maxLevel?: number;
+  connects?: string[];
+  monsters?: { name: string; lootLevel?: number; health?: number }[];
+  harvest?: Record<string, string[]>;
+  npcs?: string[];
+}
+
+export interface WikiMonster {
+  type?: string;
+  zones?: { zone: string; where?: string; lootLevel?: number; health?: number; time?: string }[];
+  skin?: string[];
+  butcher?: string[];
+  tame?: { level: number; type: string };
+}
+
+export interface WikiBuy {
+  npc: string;
+  zone?: string;
+  cost: number;
+  qty?: number;
+  favor?: string;
+  currency?: string;
+}
+
+export interface WikiItemLocation {
+  name: string;
+  wiki?: string;
+  skin?: string[];
+  skinBonus?: string[];
+  butcher?: string[];
+  butcherBonus?: string[];
+  skull?: string[];
+  loot?: { mob: string; rarity?: string }[];
+  lootTotal?: number;
+  dropZones?: string[];
+  gather?: { skill: string; level?: number; zones?: string[]; where?: string; creatures?: string[] }[];
+  harvestZones?: string[];
+  grow?: { seed: string; level: number; growTime: string; fertilizer: string };
+  buy?: WikiBuy[];
+  gatherNote?: string;
+  note?: string;
+}
+
+export interface WikiNpc {
+  name: string;
+  zone?: string;
+  town?: string;
+  location?: string;
+  wander?: string;
+  detail?: string;
+  wiki: string;
+}
+
+export interface WikiData {
+  meta: WikiMeta;
+  zones: Record<string, WikiZone>;
+  monsters: Record<string, WikiMonster>;
+  itemLocations: Record<string, WikiItemLocation>;
+  npcs: Record<string, WikiNpc>;
+}
+
 export interface RawGameData {
+  wiki: WikiData;
   meta: Meta;
   skills: Record<string, Skill>;
   xptables: Record<string, number[]>;
