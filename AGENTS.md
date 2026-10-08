@@ -2,6 +2,10 @@
 
 Tento soubor platí pro každého agenta, který na repu pracuje (Claude Code, subagenti, Codex, Cursor a další).
 
+## Začátek práce
+
+Nejdřív si přečti `HANDOFF.md`: stav projektu, rozhodnutí uživatele, co ověřit ve hře a známé slabiny. Když práci dokončíš, `HANDOFF.md` aktualizuj.
+
 ## Psaní textu
 
 Každý text, který napíšeš, musí projít skillem unslop: `.claude/skills/unslop/SKILL.md`. Před psaním si ho přečti a pravidla dodržuj. Týká se to:
