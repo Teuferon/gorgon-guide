@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0f1216;
+  --color-panel: #181d24;
+  --color-panel2: #1f262f;
+  --color-line: #2c3541;
+  --color-fg: #e4e8ee;
+  --color-muted: #9aa5b4;
+  --color-accent: #6cb4f0;
+  --color-good: #7bd389;
+  --color-warn: #e0b45a;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+input[type="number"],
+input[type="text"],
+input[type="search"],
+select {
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 0.375rem;
+  padding: 0.35rem 0.5rem;
+  color: var(--color-fg);
+  min-height: 2.25rem;
+}
+
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--color-accent);
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn {
+  background: var(--color-panel2);
+  border: 1px solid var(--color-line);
+  border-radius: 0.375rem;
+  padding: 0.35rem 0.8rem;
+  min-height: 2.25rem;
+}
+
+.btn:hover {
+  border-color: var(--color-accent);
+}
+
+/* Markdown guides, no typography plugin needed. */
+.guide h1 { font-size: 1.4rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.guide h2 { font-size: 1.2rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+.guide h3 { font-size: 1.05rem; font-weight: 600; margin: 0.8rem 0 0.4rem; }
+.guide p { margin: 0.5rem 0; }
+.guide ul { list-style: disc; padding-left: 1.4rem; margin: 0.5rem 0; }
+.guide ol { list-style: decimal; padding-left: 1.4rem; margin: 0.5rem 0; }
+.guide code { background: var(--color-panel2); padding: 0.05rem 0.3rem; border-radius: 0.25rem; }
+.guide table { border-collapse: collapse; margin: 0.5rem 0; }
+.guide th, .guide td { border: 1px solid var(--color-line); padding: 0.25rem 0.5rem; }
