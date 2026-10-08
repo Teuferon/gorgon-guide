@@ -1,60 +1,68 @@
 # Gorgon Guide
 
-Osobní průvodce hrou Project Gorgon. Zadáte své levely skillů a aplikace ukáže, co dělat dál. Hotové položky z přehledu mizí.
+A personal guide for the game Project Gorgon. You enter your skill levels and the app shows what to do next. Items you finish disappear from the lists.
 
-## Co aplikace umí
+## What the app does
 
-- Moje skilly. Seznam hráčských skillů s polem na level a přepínačem „sleduji“, hledání a rozdělení na bojové a ostatní. Celý stav jde exportovat do souboru JSON a importovat na jiném počítači.
-- Další kroky. Pro každý sledovaný skill karta s recepty, které na vašem levelu ještě dávají XP (seřazené podle odhadu XP), s bonusy za první výrobu k odškrtnutí, s ingrediencemi, místem učení receptu a dalšími odemčeními z odměn skillu. Přepínač „zobrazit hotové“ vrátí odškrtnuté položky.
-- Stránka skillu (`#/skill/<InternalName>`). Všechny recepty po pásmech levelů, odměny, trenéři, tipy ke zvýšení stropu levelu a průvodce z Markdownu.
-- Vlastní úkoly. Textové úkoly, volitelně svázané se skillem a cílovým levelem. Ukážou se i na kartě skillu.
+- **My skills.** A list of player skills with a level field and a "tracking" switch, a search box, and a split into combat and other skills. You can export the whole state to a JSON file and import it on another computer. A level of 0 means you have not learned the skill yet.
+- **Next steps.** One card per tracked skill. A card has:
+  - recipes that still give XP at your level, sorted by estimated XP, with the first-craft bonus next to the regular XP;
+  - a first-craft bonus checklist, with the next five recipes above your level under "Coming up";
+  - ingredients, the place to learn each recipe, and the next unlocks from the skill rewards;
+  - for a skill you have not learned (level 0), the trainer and the first recipes it unlocks;
+  - for a skill without recipes, a short note, a link to its guide, and a placeholder slot for training spots.
+  "Show completed" brings back the items you checked off.
+- **Skill page** (`#/skill/<InternalName>`). All recipes in level bands, level rewards, trainers, hints for raising the level cap, and the Markdown guide.
+- **Custom tasks.** Free-text tasks, optionally tied to a skill and a target level. They also show on the skill card.
 
-Cenu ingrediencí data neobsahují. U ingrediencí aplikace ukazuje „základní hodnotu“ položky, prodejce (NPC a oblast) nebo druh zdroje. Tržní ceny hráčů nejsou nikde.
+The game data has no shop prices. For ingredients the app shows the item's "base value", the vendor (NPC and area) or the kind of source. It shows no player market prices.
 
-XP u receptů je odhad. Data mají pole `dropOff` (level, procento a krok), ale vzorec poklesu XP není nikde zdokumentovaný. Aplikace počítá, že od `dropOff.level` ubývá `pct` základního XP za každých `rate` levelů. Recepty pod hranicí 50 % základního XP se skryjí (hranici jde přepnout na stránce Další kroky). Podrobnosti jsou v `src/lib/xp.ts` a v `docs/data-sources.md`.
+The XP numbers are an estimate. Recipes have a `dropOff` field (level, percentage, step), but the formula for the XP drop is not documented. The app assumes that from `dropOff.level` on, the recipe loses `pct` of its base XP for every `rate` levels. Recipes below 50% of their base XP are hidden, and you can change that limit on the Next steps page. See `src/lib/xp.ts` and `docs/data-sources.md`.
 
-## Spuštění
+## Run it
 
-Potřebujete Node 18 nebo novější.
+You need Node 18 or newer.
 
 ```
 npm install
 npm run dev
 ```
 
-Další příkazy:
+Other commands:
 
 ```
-npm run build        produkční build do dist/ (kontrola typů + Vite)
-npm run preview      náhled buildu
-npm test             testy logiky (Vitest)
-npm run fetch-data   stáhne aktuální herní data
+npm run build        production build into dist/ (type check, then Vite)
+npm run preview      preview the build
+npm test             logic tests (Vitest)
+npm run fetch-data   download the current game data
 ```
 
-Build používá relativní cesty a hash router, takže složku `dist/` jde nahrát na libovolný statický hosting, i do podsložky.
+The build uses relative paths and a hash router, so you can upload `dist/` to any static host, including a sub-folder. The old Czech routes `#/skilly` and `#/ukoly` redirect to `#/skills` and `#/tasks`.
 
-Stav (levely, sledované skilly, odškrtnuté recepty, úkoly) se ukládá do localStorage prohlížeče. Pro zálohu mezi počítači použijte export a import na stránce Moje skilly.
+Your state (levels, tracked skills, checked-off recipes, tasks) is stored in the browser's localStorage. To move it between computers, use export and import on the My skills page.
 
-## Aktualizace herních dat
+## Refresh the game data
 
 ```
 npm run fetch-data
 ```
 
-Skript `scripts/fetch-data.mjs` stáhne oficiální JSON soubory ze serveru vývojářů, pokud vyšla nová verze, a zapíše zmenšené soubory do `src/data/`. Přepínače `--force` a `--offline` jsou popsané v `docs/data-sources.md`. Po aktualizaci spusťte `npm test`. Testy nad skutečnými daty zachytí změnu schématu.
+`scripts/fetch-data.mjs` downloads the official JSON files from the developers' server when a new version is out and writes trimmed files to `src/data/`. The `--force` and `--offline` switches are described in `docs/data-sources.md`. After a refresh, run `npm test`. The tests on the real data catch schema changes.
 
-## Průvodci ke skillům
+The files `src/data/wiki-*.json` come from a separate script, `scripts/fetch-wiki.mjs` (see `docs/wiki-data.md`). The app does not use them yet. They are meant for the training-spots slot on cards of skills without recipes.
 
-Soubor `src/content/guides/<InternalNameSkillu>.md` se zobrazí na stránce daného skillu. Interní jméno je klíč v `src/data/skills.json` (například `Fletching`, `AnimalHandling`). Zatím je tam jen zástupný soubor pro Fletching.
+## Skill guides
 
-## Struktura
+A file `src/content/guides/<SkillInternalName>.md` shows on the page of that skill. The internal name is the key in `src/data/skills.json`, for example `Fletching` or `AnimalHandling`.
 
-- `src/lib/` čistá logika a testy: filtr skillů, odhad XP, zdroje ingrediencí a receptů, odemčení, stav a import
-- `src/pages/`, `src/components/` obrazovky a komponenty React
-- `src/data/` zmenšená herní data (generuje skript)
-- `src/content/guides/` průvodci v Markdownu
-- `docs/` zdroje dat a poznámky
+## Structure
 
-## Licence dat
+- `src/lib/` pure logic and tests: skill filter, XP estimate, ingredient and recipe sources, unlocks, state and import
+- `src/pages/`, `src/components/` React screens and components
+- `src/data/` trimmed game data (generated by the scripts)
+- `src/content/guides/` guides in Markdown
+- `docs/` data sources and notes
 
-Some portions copyright 2026 Elder Game, LLC. Řádek je v patičce aplikace a bere se z `src/data/meta.json`.
+## Data license
+
+Some portions copyright 2026 Elder Game, LLC. The line is in the app footer and comes from `src/data/meta.json`.

@@ -34,20 +34,20 @@ function TaskForm({ skills }: { skills: [string, string][] }) {
   return (
     <form onSubmit={submit} className="bg-panel border border-line rounded-lg p-3 grid gap-3 sm:grid-cols-[1fr_auto_auto_auto] items-end">
       <label className="grid gap-1">
-        <span className="text-sm text-muted">Úkol</span>
-        <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Například koupit 20 Feathers" />
+        <span className="text-sm text-muted">Task</span>
+        <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="For example: buy 20 Feathers" />
       </label>
       <label className="grid gap-1">
-        <span className="text-sm text-muted">Skill (volitelné)</span>
+        <span className="text-sm text-muted">Skill (optional)</span>
         <select value={skill} onChange={(e) => setSkill(e.target.value)}>
-          <option value="">bez skillu</option>
+          <option value="">no skill</option>
           {skills.map(([k, name]) => (
             <option key={k} value={k}>{name}</option>
           ))}
         </select>
       </label>
       <label className="grid gap-1">
-        <span className="text-sm text-muted">Cílový level</span>
+        <span className="text-sm text-muted">Target level</span>
         <input
           type="number"
           min={0}
@@ -58,7 +58,7 @@ function TaskForm({ skills }: { skills: [string, string][] }) {
           onChange={(e) => setTarget(e.target.value)}
         />
       </label>
-      <button type="submit" className="btn">Přidat</button>
+      <button type="submit" className="btn">Add</button>
     </form>
   );
 }
@@ -70,9 +70,9 @@ export default function TasksPage() {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-semibold">Vlastní úkoly</h1>
+      <h1 className="text-2xl font-semibold">Custom tasks</h1>
       <p className="text-muted">
-        Úkol svázaný se skillem se ukáže i na jeho kartě na stránce <Link to="/">Další kroky</Link>.
+        A task tied to a skill also shows on that skill's card on the <Link to="/">Next steps</Link> page.
       </p>
       <WithData>
         {(data) => (
@@ -83,9 +83,9 @@ export default function TasksPage() {
                 .map(([k, s]): [string, string] => [k, s.name])
                 .sort((a, b) => a[1].localeCompare(b[1]))}
             />
-            <Toggle checked={showDone} onChange={setShowDone}>zobrazit hotové</Toggle>
+            <Toggle checked={showDone} onChange={setShowDone}>show completed</Toggle>
             {tasks.length === 0 ? (
-              <p className="text-muted">Žádné úkoly.</p>
+              <p className="text-muted">No tasks.</p>
             ) : (
               <ul className="divide-y divide-line border border-line rounded-lg bg-panel">
                 {tasks.map((t) => (
@@ -93,7 +93,7 @@ export default function TasksPage() {
                     <input
                       type="checkbox"
                       checked={t.done}
-                      aria-label={`Hotovo: ${t.text}`}
+                      aria-label={`Done: ${t.text}`}
                       onChange={(e) => dispatch({ type: "setTaskDone", id: t.id, done: e.target.checked })}
                     />
                     <span className={`flex-1 min-w-40 ${t.done ? "line-through text-muted" : ""}`}>{t.text}</span>
@@ -103,7 +103,7 @@ export default function TasksPage() {
                         {t.targetLevel !== undefined ? `, level ${t.targetLevel}` : ""}
                       </Link>
                     )}
-                    <button className="btn" onClick={() => dispatch({ type: "removeTask", id: t.id })}>Smazat</button>
+                    <button className="btn" onClick={() => dispatch({ type: "removeTask", id: t.id })}>Delete</button>
                   </li>
                 ))}
               </ul>

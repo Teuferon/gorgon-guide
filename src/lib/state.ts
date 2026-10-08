@@ -1,5 +1,5 @@
 import { DEFAULT_LEVELS, DEFAULT_TRACKED } from "./skills";
-import { DEFAULT_USEFUL_THRESHOLD } from "./xp";
+import { DEFAULT_USEFUL_THRESHOLD, type RankBy } from "./xp";
 
 export const STORAGE_KEY = "gorgon-guide-state";
 export const STATE_VERSION = 1;
@@ -17,6 +17,8 @@ export interface CustomTask {
 export interface Settings {
   /** Recipes with a lower share of their base XP than this are hidden (0 to 1). */
   usefulThreshold: number;
+  /** How the recipe list is sorted, see RankBy. */
+  rankBy: RankBy;
 }
 
 export interface AppState {
@@ -36,7 +38,7 @@ export function defaultState(): AppState {
     tracked: Object.fromEntries(DEFAULT_TRACKED.map((k) => [k, true])),
     doneRecipes: {},
     customTasks: [],
-    settings: { usefulThreshold: DEFAULT_USEFUL_THRESHOLD },
+    settings: { usefulThreshold: DEFAULT_USEFUL_THRESHOLD, rankBy: "now" },
   };
 }
 
@@ -56,6 +58,7 @@ export type Action =
   | { type: "setTaskDone"; id: string; done: boolean }
   | { type: "removeTask"; id: string }
   | { type: "setThreshold"; value: number }
+  | { type: "setRankBy"; value: RankBy }
   | { type: "replace"; state: AppState };
 
 export function reduce(state: AppState, action: Action): AppState {
@@ -81,6 +84,8 @@ export function reduce(state: AppState, action: Action): AppState {
       return { ...state, customTasks: state.customTasks.filter((t) => t.id !== action.id) };
     case "setThreshold":
       return { ...state, settings: { ...state.settings, usefulThreshold: Math.min(1, Math.max(0, action.value)) } };
+    case "setRankBy":
+      return { ...state, settings: { ...state.settings, rankBy: action.value } };
     case "replace":
       return action.state;
   }
@@ -126,7 +131,11 @@ export function sanitizeState(raw: unknown): AppState | undefined {
   if (isObject(raw.settings) && typeof raw.settings.usefulThreshold === "number") {
     usefulThreshold = Math.min(1, Math.max(0, raw.settings.usefulThreshold));
   }
-  return { version: STATE_VERSION, levels, tracked, doneRecipes, customTasks, settings: { usefulThreshold } };
+  const rankBy: RankBy =
+    isObject(raw.settings) && (raw.settings.rankBy === "now" || raw.settings.rankBy === "repeat")
+      ? raw.settings.rankBy
+      : base.settings.rankBy;
+  return { version: STATE_VERSION, levels, tracked, doneRecipes, customTasks, settings: { usefulThreshold, rankBy } };
 }
 
 export const EXPORT_FORMAT = "gorgon-guide";
@@ -143,13 +152,13 @@ export function parseImport(text: string): ImportResult {
   try {
     json = JSON.parse(text);
   } catch {
-    return { ok: false, error: "Soubor není platný JSON." };
+    return { ok: false, error: "The file is not valid JSON." };
   }
   const candidate = isObject(json) && isObject(json.state) ? json.state : json;
   const state = sanitizeState(candidate);
-  if (!state) return { ok: false, error: "Soubor neobsahuje data aplikace." };
+  if (!state) return { ok: false, error: "The file does not contain app data." };
   if (!isObject(candidate) || !("levels" in candidate || "tracked" in candidate)) {
-    return { ok: false, error: "V souboru chybí levely a sledované skilly." };
+    return { ok: false, error: "The file has no levels or tracked skills." };
   }
   return { ok: true, state };
 }

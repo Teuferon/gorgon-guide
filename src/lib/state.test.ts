@@ -58,6 +58,10 @@ describe("export and import", () => {
     expect(parseImport("[]").ok).toBe(false);
     expect(parseImport("{}").ok).toBe(false);
   });
+  it("keeps a valid rank mode and falls back for a bad one", () => {
+    expect(sanitizeState({ settings: { rankBy: "repeat" } })!.settings.rankBy).toBe("repeat");
+    expect(sanitizeState({ settings: { rankBy: "x" } })!.settings.rankBy).toBe("now");
+  });
   it("drops wrong types instead of crashing", () => {
     const s = sanitizeState({ levels: { A: "x", B: 5000, C: 3 }, tracked: { A: 1, B: true }, customTasks: [{ id: 1 }, { id: "i", text: "ok" }], doneRecipes: { "1": true, "2": false } })!;
     expect(s.levels).toEqual({ B: 150, C: 3 });

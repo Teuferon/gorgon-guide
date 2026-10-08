@@ -16,7 +16,7 @@ export const DEFAULT_TRACKED: string[] = [
 ];
 
 /**
- * Skill filter for the "Moje skilly" list. A skill is a player skill when
+ * Skill filter for the "My skills" list. A skill is a player skill when
  *  1. it has an XP table. Umbrella skills (Anatomy, Genetics, Performance, Phrenology,
  *     Augmentation, Cosmetology) have "xpTable: None" in the data and cannot be leveled,
  *  2. and it has content: at least one reward (ability, recipe, bonus level, note) or one
@@ -69,9 +69,7 @@ export function groupByCombat(rows: SkillRow[]): { combat: SkillRow[]; other: Sk
   };
 }
 
-/** Czech plural: 1 recept, 2 až 4 recepty, jinak receptů. */
-export function plural(n: number, one: string, few: string, many: string): string {
-  if (n === 1) return one;
-  if (n >= 2 && n <= 4) return few;
-  return many;
+/** English plural: 1 recipe, 2 recipes. */
+export function plural(n: number, one: string, many: string): string {
+  return n === 1 ? one : many;
 }

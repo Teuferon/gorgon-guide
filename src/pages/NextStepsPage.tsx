@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAppState } from "../store";
 import { Toggle, WithData } from "../components/common";
 import { SkillCard } from "../components/SkillCard";
+import type { RankBy } from "../lib/xp";
 
 export default function NextStepsPage() {
   const { state, dispatch } = useAppState();
@@ -12,31 +13,43 @@ export default function NextStepsPage() {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-semibold">Další kroky</h1>
+      <h1 className="text-2xl font-semibold">Next steps</h1>
       <p className="text-muted">
-        Karty ukazují recepty, které na vašem levelu ještě dávají XP, bonusy za první výrobu a nejbližší odemčení. XP u
-        receptů je odhad. Vzorec poklesu XP při vyšším levelu z dat nevyplývá přesně, proto ho berte jako přibližný.
+        Each card shows the recipes that still give XP at your level, the first-craft bonuses and the next unlocks. XP
+        values for recipes are an estimate. The game data does not say exactly how XP drops when your level is higher
+        than the recipe needs, so treat the numbers as approximate.
       </p>
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-        <Toggle checked={showDone} onChange={setShowDone}>zobrazit hotové</Toggle>
-        <Toggle checked={showLow} onChange={setShowLow}>zobrazit i recepty s malým XP</Toggle>
+        <Toggle checked={showDone} onChange={setShowDone}>show completed</Toggle>
+        <Toggle checked={showLow} onChange={setShowLow}>show low-XP recipes</Toggle>
         <label className="flex items-center gap-2">
-          <span>Skrýt recepty pod</span>
+          <span>Hide recipes below</span>
           <select
             value={String(state.settings.usefulThreshold)}
             onChange={(e) => dispatch({ type: "setThreshold", value: Number(e.target.value) })}
-            aria-label="Hranice užitečného XP"
+            aria-label="Useful XP threshold"
           >
-            <option value="0.9">90 % základního XP</option>
-            <option value="0.7">70 % základního XP</option>
-            <option value="0.5">50 % základního XP</option>
-            <option value="0.3">30 % základního XP</option>
+            <option value="0.9">90% of base XP</option>
+            <option value="0.7">70% of base XP</option>
+            <option value="0.5">50% of base XP</option>
+            <option value="0.3">30% of base XP</option>
+          </select>
+        </label>
+        <label className="flex items-center gap-2">
+          <span>Sort by</span>
+          <select
+            value={state.settings.rankBy}
+            onChange={(e) => dispatch({ type: "setRankBy", value: e.target.value as RankBy })}
+            aria-label="Recipe sort order"
+          >
+            <option value="now">next craft, with first-craft bonus</option>
+            <option value="repeat">XP per craft only</option>
           </select>
         </label>
       </div>
       {tracked.length === 0 ? (
         <p>
-          Nesledujete žádný skill. Zapněte „sleduji“ na stránce <Link to="/skilly">Moje skilly</Link>.
+          You are not tracking any skill. Turn on "tracking" on the <Link to="/skills">My skills</Link> page.
         </p>
       ) : (
         <WithData>

@@ -23,15 +23,15 @@ function Guide({ skillKey }: { skillKey: string }) {
   if (!hasGuide(skillKey)) return null;
   return (
     <section className="space-y-2">
-      <h2 className="text-xl font-semibold">Průvodce</h2>
+      <h2 className="text-xl font-semibold">Guide</h2>
       <div className="guide bg-panel border border-line rounded-lg p-4">
-        {text === undefined ? <p className="text-muted">Načítám.</p> : <Markdown>{text}</Markdown>}
+        {text === undefined ? <p className="text-muted">Loading.</p> : <Markdown>{text}</Markdown>}
       </div>
     </section>
   );
 }
 
-const KIND_LABEL = { recipe: "recept", ability: "schopnost", bonus: "bonusový level pro", note: "" } as const;
+const KIND_LABEL = { recipe: "recipe", ability: "ability", bonus: "bonus level for", note: "" } as const;
 
 function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
   const { state, dispatch } = useAppState();
@@ -39,7 +39,7 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
   if (!skill) {
     return (
       <p>
-        Skill „{skillKey}“ v datech není. <Link to="/skilly">Zpět na seznam skillů</Link>.
+        There is no skill "{skillKey}" in the data. <Link to="/skills">Back to the skill list</Link>.
       </p>
     );
   }
@@ -60,7 +60,7 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
             <span className="text-muted">level</span>
             <LevelInput
               value={level}
-              label={`Level skillu ${skill.name}`}
+              label={`Level of ${skill.name}`}
               onChange={(n) => dispatch({ type: "setLevel", skill: skillKey, level: n })}
             />
           </label>
@@ -68,15 +68,15 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
             checked={isTracked(state, skillKey)}
             onChange={(v) => dispatch({ type: "setTracked", skill: skillKey, tracked: v })}
           >
-            sleduji
+            tracking
           </Toggle>
-          {skill.maxLevel && <span className="text-muted text-sm">XP tabulka sahá do levelu {skill.maxLevel}</span>}
+          {skill.maxLevel && <span className="text-muted text-sm">The XP table goes up to level {skill.maxLevel}</span>}
         </div>
       </header>
 
       {hints.length > 0 && (
         <section className="space-y-2">
-          <h2 className="text-xl font-semibold">Zvyšování stropu levelu</h2>
+          <h2 className="text-xl font-semibold">Raising the level cap</h2>
           <ul className="bg-panel border border-line rounded-lg p-3 space-y-1">
             {hints.map((h) => (
               <li key={h.level} className={level >= h.level ? "text-muted" : ""}>
@@ -88,9 +88,9 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
       )}
 
       <section className="space-y-2">
-        <h2 className="text-xl font-semibold">Odměny za levely</h2>
+        <h2 className="text-xl font-semibold">Level rewards</h2>
         {rewards.length === 0 ? (
-          <p className="text-muted">Skill nemá v datech žádné odměny.</p>
+          <p className="text-muted">This skill has no rewards in the data.</p>
         ) : (
           <ol className="bg-panel border border-line rounded-lg p-3 space-y-1">
             {rewards.map((u, i) => (
@@ -98,7 +98,7 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
                 <span className="inline-block w-20 text-accent">level {u.level}</span>
                 {KIND_LABEL[u.kind]} {u.name}
                 {u.note && u.kind !== "note" && <span className="text-muted"> ({u.note})</span>}
-                {u.level <= level && <span className="text-good"> hotovo</span>}
+                {u.level <= level && <span className="text-good"> reached</span>}
               </li>
             ))}
           </ol>
@@ -106,9 +106,9 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
       </section>
 
       <section className="space-y-2">
-        <h2 className="text-xl font-semibold">Trenéři</h2>
+        <h2 className="text-xl font-semibold">Trainers</h2>
         {trainers.length === 0 ? (
-          <p className="text-muted">Žádný NPC tento skill v datech neučí.</p>
+          <p className="text-muted">No NPC trains this skill in the data.</p>
         ) : (
           <ul className="bg-panel border border-line rounded-lg p-3 space-y-1">
             {trainers.map((k) => {
@@ -116,7 +116,7 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
               return (
                 <li key={k}>
                   {npc.name} <span className="text-muted">({data.areas[npc.area] ?? npc.area})</span>
-                  {npc.trainFavor && <span className="text-muted">, trénink od favoru {npc.trainFavor}</span>}
+                  {npc.trainFavor && <span className="text-muted">, trains from favor {npc.trainFavor}</span>}
                 </li>
               );
             })}
@@ -126,16 +126,16 @@ function Detail({ data, skillKey }: { data: GameData; skillKey: string }) {
 
       <section className="space-y-2">
         <h2 className="text-xl font-semibold">
-          Recepty ({recipes.length}){" "}
-          <span className="text-warn text-sm font-normal">XP je odhad pro váš level, vzorec není ověřený</span>
+          Recipes ({recipes.length}){" "}
+          <span className="text-warn text-sm font-normal">XP is an estimate for your level, the formula is not verified</span>
         </h2>
         {bands.length === 0 ? (
-          <p className="text-muted">Skill nemá recepty. Roste používáním ve hře.</p>
+          <p className="text-muted">This skill has no recipes. You level it by using it in the game.</p>
         ) : (
           bands.map((b) => (
             <details key={b.from} open={level >= b.from && level <= b.to} className="bg-panel border border-line rounded-lg">
               <summary className="cursor-pointer px-3 py-2 font-medium">
-                Levely {b.from} až {b.to} <Badge>{b.recipes.length}</Badge>
+                Levels {b.from} to {b.to} <Badge>{b.recipes.length}</Badge>
               </summary>
               <ul className="px-3 pb-2">
                 {b.recipes.map((r) => (

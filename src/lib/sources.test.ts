@@ -13,11 +13,11 @@ describe("resolveItemSource", () => {
   it("labels other sources in Czech and drops the useless ones", () => {
     const s = resolveItemSource(data, 101);
     expect(s.vendors).toEqual([]);
-    expect(s.labels).toEqual(["drop z monster", "porcování těl", "craft z receptu Easy, Mid a 1 dalších"]);
+    expect(s.labels).toEqual(["monster drop", "butchering corpses", "crafted from recipe Easy, Mid and 1 more"]);
   });
   it("falls back when only an unused source exists or the item is unknown", () => {
-    expect(resolveItemSource(data, 102).labels).toEqual(["zdroj není v datech"]);
-    expect(resolveItemSource(data, 999).labels).toEqual(["zdroj není v datech"]);
+    expect(resolveItemSource(data, 102).labels).toEqual(["source not in the data"]);
+    expect(resolveItemSource(data, 999).labels).toEqual(["source not in the data"]);
   });
 });
 
@@ -35,11 +35,11 @@ describe("resolveIngredient", () => {
 
 describe("resolveRecipeSources", () => {
   it("describes trainers, skill rewards, quests and items", () => {
-    expect(resolveRecipeSources(data, 1).map(describeRecipeSource)).toEqual(["trenér Chef (Town)"]);
-    expect(resolveRecipeSources(data, 2).map(describeRecipeSource)).toEqual(["odměna za level 10 ve skillu Cooking"]);
+    expect(resolveRecipeSources(data, 1).map(describeRecipeSource)).toEqual(["trainer Chef (Town)"]);
+    expect(resolveRecipeSources(data, 2).map(describeRecipeSource)).toEqual(["reward for reaching level 10 in Cooking"]);
     expect(resolveRecipeSources(data, 3).map(describeRecipeSource)).toEqual([
-      "quest „Feed the King“ (Chef, Town)",
-      "z položky Cookbook",
+      'quest "Feed the King" (Chef, Town)',
+      "taught by the item Cookbook",
     ]);
   });
   it("reports a missing source", () => {

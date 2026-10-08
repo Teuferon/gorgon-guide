@@ -8,20 +8,20 @@ import type { GameData } from "../lib/types";
 
 function SkillTable({ rows }: { rows: SkillRow[] }) {
   const { state, dispatch } = useAppState();
-  if (rows.length === 0) return <p className="text-muted">Nic nenalezeno.</p>;
+  if (rows.length === 0) return <p className="text-muted">Nothing found.</p>;
   return (
     <ul className="divide-y divide-line border border-line rounded-lg bg-panel">
       {rows.map(({ key, skill, player }) => (
         <li key={key} className="flex flex-wrap items-center gap-3 px-3 py-2">
           <Link to={`/skill/${key}`} className="flex-1 min-w-40">
             {skill.name}
-            {!player && <span className="text-muted text-sm"> (skrytý filtrem)</span>}
+            {!player && <span className="text-muted text-sm"> (hidden by the filter)</span>}
           </Link>
           <label className="flex items-center gap-2">
             <span className="text-muted text-sm">level</span>
             <LevelInput
               value={getLevel(state, key)}
-              label={`Level skillu ${skill.name}`}
+              label={`Level of ${skill.name}`}
               onChange={(n) => dispatch({ type: "setLevel", skill: key, level: n })}
             />
           </label>
@@ -29,7 +29,7 @@ function SkillTable({ rows }: { rows: SkillRow[] }) {
             checked={isTracked(state, key)}
             onChange={(v) => dispatch({ type: "setTracked", skill: key, tracked: v })}
           >
-            sleduji
+            tracking
           </Toggle>
         </li>
       ))}
@@ -57,23 +57,23 @@ function Backup() {
     const result = parseImport(await file.text());
     if (result.ok) {
       dispatch({ type: "replace", state: result.state });
-      setMessage("Import proběhl. Původní data v prohlížeči jsou přepsaná.");
+      setMessage("Import done. The data in this browser was replaced.");
     } else {
-      setMessage(`Import se nepovedl. ${result.error}`);
+      setMessage(`Import failed. ${result.error}`);
     }
     if (fileRef.current) fileRef.current.value = "";
   };
 
   return (
     <section className="bg-panel border border-line rounded-lg p-3 space-y-2">
-      <h2 className="font-semibold">Záloha</h2>
+      <h2 className="font-semibold">Backup</h2>
       <p className="text-muted text-sm">
-        Exportuje levely, sledované skilly, odškrtnuté recepty a vlastní úkoly do jednoho souboru JSON. Import tato data
-        v prohlížeči přepíše.
+        Export saves your levels, tracked skills, checked-off recipes and custom tasks to one JSON file. Import replaces
+        that data in this browser.
       </p>
       <div className="flex flex-wrap items-center gap-2">
-        <button className="btn" onClick={download}>Exportovat do souboru</button>
-        <button className="btn" onClick={() => fileRef.current?.click()}>Importovat ze souboru</button>
+        <button className="btn" onClick={download}>Export to file</button>
+        <button className="btn" onClick={() => fileRef.current?.click()}>Import from file</button>
         <input
           ref={fileRef}
           type="file"
@@ -108,17 +108,17 @@ function SkillsList({ data }: { data: GameData }) {
       <div className="flex flex-wrap items-center gap-4">
         <input
           type="search"
-          placeholder="Hledat skill"
-          aria-label="Hledat skill"
+          placeholder="Search skills"
+          aria-label="Search skills"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-64 max-w-full"
         />
-        <Toggle checked={showHidden} onChange={setShowHidden}>zobrazit i skilly bez obsahu</Toggle>
+        <Toggle checked={showHidden} onChange={setShowHidden}>show skills without content</Toggle>
       </div>
-      <h2 className="text-xl font-semibold mt-2">Bojové skilly ({combat.length})</h2>
+      <h2 className="text-xl font-semibold mt-2">Combat skills ({combat.length})</h2>
       <SkillTable rows={combat} />
-      <h2 className="text-xl font-semibold mt-2">Ostatní skilly ({other.length})</h2>
+      <h2 className="text-xl font-semibold mt-2">Other skills ({other.length})</h2>
       <SkillTable rows={other} />
     </>
   );
@@ -127,10 +127,11 @@ function SkillsList({ data }: { data: GameData }) {
 export default function SkillsPage() {
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-semibold">Moje skilly</h1>
+      <h1 className="text-2xl font-semibold">My skills</h1>
       <p className="text-muted">
-        Zadejte svůj level a zapněte „sleduji“ u skillů, které chcete mít na stránce Další kroky. Skilly, které nejdou
-        levelovat nebo nemají v datech žádný obsah, jsou schované. Skilly s levelem nebo se sledováním se ukážou vždy.
+        Enter your level and turn on "tracking" for the skills you want on the Next steps page. A level of 0 means you
+        have not learned the skill yet. Skills that cannot be leveled or have no content in the game data are hidden.
+        Skills you track or have a level in always show.
       </p>
       <Backup />
       <WithData>{(data) => <SkillsList data={data} />}</WithData>

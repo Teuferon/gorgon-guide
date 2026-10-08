@@ -35,7 +35,7 @@ describe("filterSkills", () => {
 });
 
 describe("plural", () => {
-  it("follows Czech forms", () => {
-    expect([1, 3, 5].map((n) => plural(n, "recept", "recepty", "receptů"))).toEqual(["recept", "recepty", "receptů"]);
+  it("uses the singular only for 1", () => {
+    expect([0, 1, 2].map((n) => plural(n, "recipe", "recipes"))).toEqual(["recipes", "recipe", "recipes"]);
   });
 });

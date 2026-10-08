@@ -16,7 +16,7 @@ export interface VendorInfo {
 
 export interface ItemSourceInfo {
   vendors: VendorInfo[];
-  /** Czech labels for sources other than a vendor. Empty when a vendor sells the item. */
+  /** Text labels for sources other than a vendor. Empty when a vendor sells the item. */
   labels: string[];
 }
 
@@ -40,6 +40,7 @@ export type ResolvedIngredient =
 
 const DEFAULT_FAVORS = new Set(["Despised", "Neutral"]);
 const MAX_LABELS = 4;
+export const NO_SOURCE = "source not in the data";
 
 function areaName(data: Pick<SourceData, "areas">, key: string | undefined): string {
   if (!key) return "";
@@ -53,17 +54,17 @@ function vendorInfo(data: SourceData, npcKey: string): VendorInfo | undefined {
   return { npc: npcKey, npcName: npc.name, areaName: areaName(data, npc.area), favor };
 }
 
-/** Czech labels for the source types that have no ID (item-sources "other" field). */
+/** Labels for the source types that have no ID (item-sources "other" field). */
 const OTHER_LABELS: Record<string, string> = {
-  Monster: "drop z monster",
-  CorpseSkinning: "stahování z kůže",
-  CorpseButchering: "porcování těl",
-  CorpseSkullExtraction: "získání z lebky",
-  Angling: "rybaření",
-  TreasureMap: "poklad z mapy",
-  ResourceInteractor: "sběr ze zdroje ve světě",
-  CraftedInteractor: "vyrobený objekt ve světě",
-  QuestObjectiveMacGuffin: "předmět z questu",
+  Monster: "monster drop",
+  CorpseSkinning: "skinning corpses",
+  CorpseButchering: "butchering corpses",
+  CorpseSkullExtraction: "skull extraction",
+  Angling: "fishing",
+  TreasureMap: "treasure map",
+  ResourceInteractor: "gathered from a world resource",
+  CraftedInteractor: "crafted world object",
+  QuestObjectiveMacGuffin: "quest item",
 };
 
 function describeOther(raw: string): string | undefined {
@@ -85,7 +86,7 @@ function npcLabel(data: SourceData, key: string): string {
 /** Where an item comes from. A vendor wins over every other source. */
 export function resolveItemSource(data: SourceData, itemId: number | string): ItemSourceInfo {
   const src = data.itemSources[String(itemId)];
-  if (!src) return { vendors: [], labels: ["zdroj není v datech"] };
+  if (!src) return { vendors: [], labels: [NO_SOURCE] };
 
   const vendors = (src.vendor ?? []).map((k) => vendorInfo(data, k)).filter((v): v is VendorInfo => !!v);
   if (vendors.length > 0) return { vendors, labels: [] };
@@ -98,17 +99,18 @@ export function resolveItemSource(data: SourceData, itemId: number | string): It
   const recipeNames = (src.recipe ?? []).map((id) => data.recipes[String(id)]?.name).filter((n): n is string => !!n);
   if (recipeNames.length > 0) {
     const shown = recipeNames.slice(0, 2).join(", ");
-    add(`craft z receptu ${shown}${recipeNames.length > 2 ? ` a ${recipeNames.length - 2} dalších` : ""}`);
+    const more = recipeNames.length - 2;
+    add(`crafted from recipe ${shown}${more > 0 ? ` and ${more} more` : ""}`);
   }
-  if (src.barter?.length) add(`výměna u NPC ${src.barter.slice(0, 2).map((k) => npcLabel(data, k)).join(", ")}`);
+  if (src.barter?.length) add(`barter with ${src.barter.slice(0, 2).map((k) => npcLabel(data, k)).join(", ")}`);
   if (src.quest?.length) {
     const q = data.quests[String(src.quest[0])];
-    add(q ? `odměna za quest „${q.name}“` : "odměna za quest");
+    add(q ? `quest reward: "${q.name}"` : "quest reward");
   }
-  if (src.gift?.length) add("dárek od NPC");
-  if (src.hangout?.length) add("odměna z hang-outu s NPC");
-  if (src.item?.length) add("získáš z jiné položky");
-  if (labels.length === 0) labels.push("zdroj není v datech");
+  if (src.gift?.length) add("gift from an NPC");
+  if (src.hangout?.length) add("hang-out reward");
+  if (src.item?.length) add("obtained from another item");
+  if (labels.length === 0) labels.push(NO_SOURCE);
   return { vendors: [], labels: labels.slice(0, MAX_LABELS) };
 }
 
@@ -171,7 +173,7 @@ export function resolveRecipeSources(data: SourceData, recipeId: number | string
         location: q?.location,
       });
     }
-    for (const id of src.item ?? []) out.push({ kind: "item", name: data.items[String(id)]?.name ?? `položka ${id}` });
+    for (const id of src.item ?? []) out.push({ kind: "item", name: data.items[String(id)]?.name ?? `item ${id}` });
     for (const key of src.hangout ?? []) out.push({ kind: "hangout", ...npcInfo(key) });
     for (const key of src.gift ?? []) out.push({ kind: "gift", ...npcInfo(key) });
   }
@@ -179,24 +181,49 @@ export function resolveRecipeSources(data: SourceData, recipeId: number | string
   return out;
 }
 
-/** Czech one-line description of a recipe source. */
+/** One-line description of a recipe source. */
 export function describeRecipeSource(s: RecipeSourceInfo): string {
   switch (s.kind) {
     case "training":
-      return s.areaName ? `trenér ${s.npcName} (${s.areaName})` : `trenér ${s.npcName}`;
+      return s.areaName ? `trainer ${s.npcName} (${s.areaName})` : `trainer ${s.npcName}`;
     case "skill":
-      return `odměna za level ${s.level} ve skillu ${s.skillName}`;
+      return `reward for reaching level ${s.level} in ${s.skillName}`;
     case "quest": {
       const where = [s.npcName, s.location].filter(Boolean).join(", ");
-      return where ? `quest „${s.name}“ (${where})` : `quest „${s.name}“`;
+      return where ? `quest "${s.name}" (${where})` : `quest "${s.name}"`;
     }
     case "item":
-      return `z položky ${s.name}`;
+      return `taught by the item ${s.name}`;
     case "hangout":
-      return `hang-out s ${s.npcName}${s.areaName ? ` (${s.areaName})` : ""}`;
+      return `hang-out with ${s.npcName}${s.areaName ? ` (${s.areaName})` : ""}`;
     case "gift":
-      return `dárek pro ${s.npcName}${s.areaName ? ` (${s.areaName})` : ""}`;
+      return `gift for ${s.npcName}${s.areaName ? ` (${s.areaName})` : ""}`;
     case "unknown":
-      return "zdroj není v datech (možná výchozí recept)";
+      return "source not in the data (possibly a starting recipe)";
   }
+}
+
+export interface TrainerInfo {
+  npc: string;
+  npcName: string;
+  areaName: string;
+  favor?: string;
+}
+
+/** NPCs that train a skill, sorted by name. Unlock cost is not part of the game data. */
+export function resolveTrainers(
+  data: Pick<GameData, "npcs" | "areas" | "trainersBySkill">,
+  skillKey: string,
+): TrainerInfo[] {
+  return (data.trainersBySkill.get(skillKey) ?? [])
+    .map((key) => {
+      const npc = data.npcs[key];
+      return {
+        npc: key,
+        npcName: npc.name,
+        areaName: areaName(data, npc.area),
+        favor: npc.trainFavor && !DEFAULT_FAVORS.has(npc.trainFavor) ? npc.trainFavor : undefined,
+      };
+    })
+    .sort((a, b) => a.npcName.localeCompare(b.npcName));
 }

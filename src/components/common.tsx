@@ -57,8 +57,8 @@ export function Badge({ children, tone = "muted" }: { children: ReactNode; tone?
 /** Renders children once the game data is loaded, a short message before that. */
 export function WithData({ children }: { children: (data: GameData) => ReactNode }) {
   const s = useDataStatus();
-  if (s.status === "loading") return <p className="text-muted">Načítám herní data.</p>;
-  if (s.status === "error") return <p className="text-warn">Data se nepodařilo načíst: {s.message}</p>;
+  if (s.status === "loading") return <p className="text-muted">Loading game data.</p>;
+  if (s.status === "error") return <p className="text-warn">Could not load the game data: {s.message}</p>;
   return <>{children(s.data)}</>;
 }
 

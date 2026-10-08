@@ -33,6 +33,18 @@ export interface RankedRecipe {
   factor: number;
   /** True when factor is at or above the threshold. */
   useful: boolean;
+  /** First-time bonus still available (0 when the recipe is marked done). */
+  firstBonus: number;
+}
+
+/** "now" sorts by XP of the next craft including the first-time bonus, "repeat" by XP per craft only. */
+export type RankBy = "now" | "repeat";
+
+export interface RankOptions {
+  threshold?: number;
+  /** Recipe IDs whose first-time bonus is already taken. */
+  done?: Record<string, unknown>;
+  rankBy?: RankBy;
 }
 
 /** Recipes that give XP, can be crafted at the given levels and exist in the game. */
@@ -50,17 +62,20 @@ export function rankRecipes(
   recipes: RecipeEntry[],
   levels: Levels,
   rewardSkill: string,
-  threshold: number = DEFAULT_USEFUL_THRESHOLD,
+  options: RankOptions = {},
 ): RankedRecipe[] {
+  const { threshold = DEFAULT_USEFUL_THRESHOLD, done = {}, rankBy = "repeat" } = options;
   const rewardLevel = levels[rewardSkill] ?? 0;
   const ranked: RankedRecipe[] = [];
   for (const recipe of recipes) {
     if (recipe.xp <= 0 || !isCraftable(recipe, levels)) continue;
     const factor = dropOffFactor(recipe.dropOff, rewardLevel);
     if (factor <= 0) continue;
-    ranked.push({ recipe, xp: recipe.xp * factor, factor, useful: factor >= threshold });
+    const firstBonus = done[recipe.id] ? 0 : Math.max(0, recipe.xpFirst);
+    ranked.push({ recipe, xp: recipe.xp * factor, factor, useful: factor >= threshold, firstBonus });
   }
-  ranked.sort((a, b) => b.xp - a.xp || b.recipe.level - a.recipe.level || a.recipe.name.localeCompare(b.recipe.name));
+  const key = (r: RankedRecipe) => (rankBy === "now" ? r.xp + r.firstBonus : r.xp);
+  ranked.sort((a, b) => key(b) - key(a) || b.xp - a.xp || b.recipe.level - a.recipe.level || a.recipe.name.localeCompare(b.recipe.name));
   return ranked;
 }
 
@@ -74,6 +89,46 @@ export function firstTimeRecipes(
   return recipes
     .filter((r) => r.xpFirst > 0 && isCraftable(r, levels) && (showDone || !done[r.id]))
     .sort((a, b) => b.xpFirst - a.xpFirst || b.level - a.level || a.name.localeCompare(b.name));
+}
+
+export interface FirstTimePlan {
+  /** Craftable now, biggest bonus first. */
+  now: RecipeEntry[];
+  /** The next recipes above the current level, lowest level first. */
+  ahead: RecipeEntry[];
+}
+
+/**
+ * First-time checklist: what can be crafted now plus the next `aheadCount` recipes with a bonus
+ * that need a higher level, so the player can plan ahead.
+ */
+export function firstTimePlan(
+  recipes: RecipeEntry[],
+  levels: Levels,
+  done: Record<string, unknown>,
+  showDone = false,
+  aheadCount = 5,
+): FirstTimePlan {
+  const ahead = recipes
+    .filter(
+      (r) =>
+        r.xpFirst > 0 &&
+        !r.notObtainable &&
+        !r.noXp &&
+        r.level > (levels[r.skill] ?? 0) &&
+        (showDone || !done[r.id]),
+    )
+    .sort((a, b) => a.level - b.level || b.xpFirst - a.xpFirst || a.name.localeCompare(b.name))
+    .slice(0, aheadCount);
+  return { now: firstTimeRecipes(recipes, levels, done, showDone), ahead };
+}
+
+/** The lowest-level recipes of a skill, for a skill the player has not learned yet. */
+export function introRecipes(recipes: RecipeEntry[], count = 5): RecipeEntry[] {
+  return recipes
+    .filter((r) => !r.notObtainable && !r.noXp && (r.xp > 0 || r.xpFirst > 0))
+    .sort((a, b) => a.level - b.level || b.xpFirst - a.xpFirst || a.name.localeCompare(b.name))
+    .slice(0, count);
 }
 
 /** XP needed to go from `level` to `level + 1`, or undefined past the end of the table. */

@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { createGameData } from "./gamedata";
 import { DEFAULT_LEVELS, filterSkills } from "./skills";
-import { describeRecipeSource, resolveIngredient, resolveRecipeSources } from "./sources";
+import { describeRecipeSource, resolveIngredient, resolveRecipeSources, resolveTrainers } from "./sources";
 import { nextUnlocks } from "./unlocks";
-import { firstTimeRecipes, rankRecipes } from "./xp";
+import { firstTimePlan, firstTimeRecipes, introRecipes, rankRecipes } from "./xp";
 import type { RawGameData } from "./types";
 
 const read = (name: string) => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url), "utf8"));
@@ -40,6 +40,14 @@ describe("real data", () => {
       expect(resolveRecipeSources(data, r.recipe.id).map(describeRecipeSource).length).toBeGreaterThan(0);
     }
     expect(firstTimeRecipes(data.recipesByRewardSkill.get("Cooking")!, levels, {}).length).toBeGreaterThan(0);
+  });
+
+  it("plans first-craft bonuses ahead and lists trainers for an unlearned skill", () => {
+    const plan = firstTimePlan(data.recipesByRewardSkill.get("Cooking")!, { Cooking: 20 }, {});
+    expect(plan.ahead).toHaveLength(5);
+    expect(plan.ahead.every((r) => r.level > 20)).toBe(true);
+    expect(resolveTrainers(data, "Fletching").map((t) => t.npcName)).toContain("Elahil");
+    expect(introRecipes(data.recipesByRewardSkill.get("Fletching")!)).toHaveLength(5);
   });
 
   it("finds next unlocks for Archery at level 20", () => {
