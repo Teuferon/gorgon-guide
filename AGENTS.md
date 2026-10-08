@@ -17,3 +17,5 @@ V českém textu používej české uvozovky „takto“. V kódu, příkazech a
 ## Projekt
 
 Webová aplikace, osobní průvodce hrou Project Gorgon: pořadí levelování skillů, nejlevnější a nejrychlejší způsoby tréninku a odškrtávání postupu. Hlavní zdroj dat je wiki (https://wiki.projectgorgon.com), u každého tvrzení o hře uváděj odkaz na zdroj.
+
+Jazyk: aplikace je celá anglicky (UI, návody ke skillům v `src/content/guides/`, README). Interní podklady v `docs/` můžou být česky. S uživatelem komunikuj česky.
